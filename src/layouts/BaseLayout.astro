@@ -1,7 +1,29 @@
 ---
 import '../styles/global.css';
-const {title='Michelle Emminger | Personal Training Wien', description='Personal Training, Online Coaching und Office Fitness in Wien mit Michelle Emminger.', canonical='/', image='/assets/hero-training.webp'} = Astro.props;
-const url = new URL(canonical, Astro.site || 'https://michelle-preview.convernatics.eu').toString();
+const {
+  title='Michelle Emminger | Personal Training Wien',
+  description='Personal Training, Online Coaching und Office Fitness in Wien mit Michelle Emminger.',
+  canonical='/',
+  image='/assets/hero-training.webp'
+} = Astro.props;
+const site = Astro.site || 'https://michelle.preview.convernatics.eu';
+const url = new URL(canonical, site).toString();
+const imageUrl = new URL(image, site).toString();
+const schema = {
+  '@context':'https://schema.org',
+  '@type':'LocalBusiness',
+  name:'Michelle Emminger Personal Training',
+  url,
+  image:imageUrl,
+  areaServed:['Wien','Online'],
+  description,
+  founder:{'@type':'Person', name:'Michelle Emminger', jobTitle:'Personal-, Gesundheits- und Functional Trainerin'},
+  makesOffer:[
+    {'@type':'Offer', name:'Personal Training Wien'},
+    {'@type':'Offer', name:'Online Coaching'},
+    {'@type':'Offer', name:'Firmenfitness Wien'}
+  ]
+};
 ---
 <html lang="de-AT">
 <head>
@@ -15,18 +37,16 @@ const url = new URL(canonical, Astro.site || 'https://michelle-preview.convernat
   <meta property="og:description" content={description} />
   <meta property="og:type" content="website" />
   <meta property="og:url" content={url} />
-  <meta property="og:image" content={new URL(image, Astro.site || 'https://michelle-preview.convernatics.eu').toString()} />
+  <meta property="og:image" content={imageUrl} />
   <link rel="icon" href="/assets/favicon.png" />
-  <script type="application/ld+json" set:html={JSON.stringify({
-    '@context':'https://schema.org','@type':'HealthAndBeautyBusiness',name:'Michelle Emminger Personal Coaching & Fitness',url:url,areaServed:'Wien',image:new URL(image, Astro.site || 'https://michelle-preview.convernatics.eu').toString(),founder:{'@type':'Person',name:'Michelle Emminger',jobTitle:'Personal Trainerin'},sameAs:['https://www.instagram.com/','https://www.linkedin.com/']
-  })}></script>
+  <script type="application/ld+json" set:html={JSON.stringify(schema)}></script>
 </head>
 <body>
   <header class="site-header">
     <div class="container nav">
       <a href="/" aria-label="Michelle Emminger Startseite"><img class="logo" src="/assets/logo.png" alt="Michelle Emminger Logo" /></a>
       <nav class="menu" aria-label="Hauptnavigation">
-        <a href="/personal-training-wien/">1:1 Training</a>
+        <a href="/personal-training-wien/">Personal Training</a>
         <a href="/firmenfitness/">Firmenfitness</a>
         <a href="/4-me-method/">4-ME Method</a>
         <a href="/ueber-mich/">Über Michelle</a>
@@ -39,8 +59,8 @@ const url = new URL(canonical, Astro.site || 'https://michelle-preview.convernat
   <a class="sticky-cta" href="/kontakt/">Erstgespräch anfragen</a>
   <footer class="footer">
     <div class="container footer-grid">
-      <div><img class="logo" src="/assets/logo-white.png" alt="Michelle Emminger Logo weiß" /><p>Personal Training, Online Coaching und Office Fitness in Wien. Klar, persönlich, alltagstauglich.</p></div>
-      <div><strong>Seiten</strong><p><a href="/leistungen/">Leistungen</a><br/><a href="/4-me-method/">4-ME Method</a><br/><a href="/firmenfitness/">Firmenfitness</a><br/><a href="/kontakt/">Kontakt</a></p></div>
+      <div><img class="logo" src="/assets/logo-white.png" alt="Michelle Emminger Logo weiß" /><p>From Struggle to Strength: Personal Training, Online Coaching und Office Fitness in Wien. Klar, persönlich und alltagstauglich.</p></div>
+      <div><strong>Seiten</strong><p><a href="/personal-training-wien/">Personal Training</a><br/><a href="/4-me-method/">4-ME Method</a><br/><a href="/firmenfitness/">Firmenfitness</a><br/><a href="/ueber-mich/">Über Michelle</a></p></div>
       <div><strong>Rechtliches</strong><p><a href="/impressum/">Impressum</a><br/><a href="/datenschutz/">Datenschutz</a></p><p class="seo-note">Preview: noindex, keine Live-Ads-Tracking-Tags.</p></div>
     </div>
   </footer>
