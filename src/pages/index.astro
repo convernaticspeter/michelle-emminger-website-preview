@@ -1,0 +1,42 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+<BaseLayout title="Michelle Emminger | Personal Training & Office Fitness Wien" description="Training für Wiener Frauen und Teams: persönliche Betreuung, alltagstaugliche Struktur, weniger Verspannung und mehr Energie." canonical="/">
+<section class="hero">
+  <div class="container">
+    <div>
+      <p class="eyebrow">Personal Training Wien · Office Fitness</p>
+      <h1>Training, das in dein echtes Leben passt.</h1>
+      <p>Michelle Emminger begleitet Frauen und Teams in Wien mit persönlichem Coaching, funktionellem Training und klaren Routinen — ohne Fitness-Theater, ohne Leistungsdruck.</p>
+      <div class="hero-actions"><a class="btn mint" href="/kontakt/">Kennenlernen anfragen</a><a class="btn ghost" href="/4-me-method/">4-ME Method ansehen</a></div>
+      <div class="trust-row"><span class="pill">20 kg eigene Transformation</span><span class="pill">Gesundheits- & Functional Training</span><span class="pill">Wien · persönlich & online</span></div>
+    </div>
+    <div class="hero-card"><img src="/assets/hero-training.webp" alt="Michelle Emminger im Training mit Kundin" loading="eager"/><div class="hero-badge">Für Menschen, die wieder Struktur, Energie und Vertrauen in den eigenen Körper wollen.</div></div>
+  </div>
+</section>
+<section class="section alt">
+ <div class="container split"><div><p class="eyebrow">Positionierung</p><h2>Nicht mehr Motivation. Ein System, das dich auffängt.</h2><p class="lead">Viele starten stark und verlieren nach wenigen Wochen den Faden. Michelles Arbeit verbindet Körper, Kopf, Alltag und Ziel — damit Training nicht zusätzliche Belastung wird, sondern machbar bleibt.</p><div class="anchor-list"><a href="/personal-training-wien/">Für Frauen in Wien</a><a href="/firmenfitness/">Für Teams im Büro</a><a href="/online-coaching/">Flexibel online</a></div></div><div class="grid"><div class="card"><div class="num">1</div><h3>Persönliche Betreuung</h3><p>Kein anonymer Plan. Michelle sieht Ausgangspunkt, Technik, Hürden und Alltag.</p></div><div class="card"><div class="num">2</div><h3>Alltagstaugliche Struktur</h3><p>Training im Studio, online, hybrid oder als kurzer Office-Reset.</p></div><div class="card"><div class="num">3</div><h3>Saubere nächste Schritte</h3><p>Erst kennenlernen, dann passenden Einstieg wählen — ohne Paketdruck.</p></div></div></div>
+</section>
+<section class="section"><div class="container"><p class="eyebrow">Die 4-ME Method</p><h2>My Body. My Mind. My Life. My Success.</h2><div class="grid four"><div class="card"><h3>My Body</h3><p>Kraft, Mobilität, Haltung und Technik passend zu deinem Stand.</p></div><div class="card"><h3>My Mind</h3><p>Motivation, Selbstbild und Dranbleiben ohne Alles-oder-nichts-Denken.</p></div><div class="card"><h3>My Life</h3><p>Training, das Zeit, Energie, Ort und Alltag ernst nimmt.</p></div><div class="card"><h3>My Success</h3><p>Erfolg als Energie, Haltung, Kraft, Schmerzfreiheit und Selbstvertrauen.</p></div></div><p><a class="btn primary" href="/4-me-method/">Methode genauer ansehen</a></p></div></section>
+<section class="section alt"><div class="container split"><div class="image-card"><img src="/assets/office-fitness.webp" alt="Michelle zeigt Training in einem Fitness-Setting" loading="lazy"/></div><div><p class="eyebrow">Zwei klare Wege</p><h2>Privat starten oder Team-Pilot prüfen.</h2><div class="grid"><div class="card"><h3>1:1 Personal Training</h3><p>Für berufstätige Frauen in Wien, die wieder realistisch trainieren wollen: mehr Energie, bessere Haltung, klare Routine.</p><a class="btn light" href="/personal-training-wien/">1:1 ansehen</a></div><div class="card"><h3>Office Fitness für Teams</h3><p>Kurze Einheiten direkt im Büro: Rücken/Nacken, Energie, Mobilität — ohne Umziehen und ohne peinliche Fitness-Show.</p><a class="btn light" href="/firmenfitness/">B2B-Pilot ansehen</a></div></div></div></div></section>
+<section class="section"><div class="container"><div class="band"><p class="eyebrow">Zitat</p><div class="quote">„Ich trainiere nicht nur Körper. Ich begleite Menschen, die echte Veränderung wollen.“</div><p>Michelle kennt den Weg zurück in Bewegung auch aus eigener Erfahrung — und verbindet diese Empathie mit klarer, fachlicher Trainingsstruktur.</p><a class="btn mint" href="/ueber-mich/">Über Michelle lesen</a></div></div></section>
+
+<section class="section alt" id="anfrage">
+  <div class="container split">
+    <div>
+      <p class="eyebrow">Nächster Schritt</p>
+      <h2>Kurz klären, ob es passt.</h2>
+      <p class="lead">Schick Michelle kurz Ziel, Ausgangssituation und gewünschtes Format. In der Preview wird noch nichts produktiv versendet.</p>
+      <ul class="checklist"><li>15–20 Minuten Kennenlernen</li><li>Training, Online Coaching oder B2B-Pilot einordnen</li><li>Keine Verpflichtung, kein Druck</li></ul>
+    </div>
+    <form class="card form" name="preview-anfrage" action="/danke/" method="get">
+      <input name="name" placeholder="Name" required />
+      <input name="kontakt" placeholder="E-Mail oder Telefon" required />
+      <select name="format"><option>1:1 Personal Training</option><option>Online Coaching</option><option>Firmenfitness / Office Fitness</option><option>Noch unsicher</option></select>
+      <textarea name="nachricht" rows="4" placeholder="Ziel, größte Hürde, Ort/Bezirk oder Teamgröße"></textarea>
+      <button class="btn primary" type="submit">Anfrage vormerken</button>
+      <p class="seo-note">Hinweis: Preview-Formular. Datenschutz-Link statt Pflicht-Checkbox, weil Kontaktanfrage/Vertragsanbahnung.</p>
+    </form>
+  </div>
+</section>
+</BaseLayout>

@@ -1,0 +1,25 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+<BaseLayout title="Personal Training Wien für Frauen | Michelle Emminger" description="1:1 Personal Training in Wien für Frauen, die mit Struktur, guter Technik und ohne Überforderung wieder in Bewegung kommen wollen." canonical="/personal-training-wien/" image="/assets/personal-training.webp">
+<section class="service-hero"><div class="container split"><div><p class="breadcrumbs"><a href="/">Start</a> / Personal Training in Wien, das dich wirklich begleitet.</p><h1 class="page-title">Personal Training in Wien, das dich wirklich begleitet.</h1><p class="lead">Für berufstätige Frauen, die wieder regelmäßig trainieren wollen — mit klarer Struktur, sauberer Technik und persönlicher Begleitung statt anonymer App.</p><div class="hero-actions"><a class="btn primary" href="#anfrage">Anfrage starten</a><a class="btn light" href="/4-me-method/">Methode ansehen</a></div></div><div class="image-card"><img src="/assets/personal-training.webp" alt="Personal Training in Wien, das dich wirklich begleitet." loading="eager"/></div></div></section>
+<section class="section"><div class="container"><p class="eyebrow">Für dich, wenn</p><h2>Du willst nicht härter gegen dich arbeiten.</h2><div class="grid three"><div class="card"><h3>Routine statt Neustart</h3><p>Du startest immer wieder, aber Alltag, Müdigkeit oder Unsicherheit werfen dich raus.</p></div><div class="card"><h3>Technik & Sicherheit</h3><p>Du willst wissen, ob du Übungen richtig machst und wie du dich sinnvoll steigerst.</p></div><div class="card"><h3>Training mit Gefühl</h3><p>Du willst stärker werden, dich wohler fühlen und nicht in Fitnessdruck verschwinden.</p></div></div></div></section><section class="section alt"><div class="container split"><div><p class="eyebrow">Ablauf</p><h2>Vom Zielcheck zum machbaren Plan.</h2><ul class="checklist"><li>Kennenlernen: Ziel, Alltag, Hürden, Beschwerden</li><li>Anamnese und Technik-Check</li><li>Training im Studio, online oder hybrid</li><li>laufende Anpassung statt starrer Plan</li></ul></div><div class="card dark"><h3>Nicht passend, wenn du …</h3><ul class="checklist xlist"><li>schnelle Wunder ohne Veränderung erwartest</li><li>den billigsten Trainingsplan suchst</li><li>keine Eigenverantwortung übernehmen willst</li></ul></div></div></section>
+<section class="section alt" id="anfrage">
+  <div class="container split">
+    <div>
+      <p class="eyebrow">Nächster Schritt</p>
+      <h2>Kurz klären, ob es passt.</h2>
+      <p class="lead">Schick Michelle kurz Ziel, Ausgangssituation und gewünschtes Format. In der Preview wird noch nichts produktiv versendet.</p>
+      <ul class="checklist"><li>15–20 Minuten Kennenlernen</li><li>Training, Online Coaching oder B2B-Pilot einordnen</li><li>Keine Verpflichtung, kein Druck</li></ul>
+    </div>
+    <form class="card form" name="preview-anfrage" action="/danke/" method="get">
+      <input name="name" placeholder="Name" required />
+      <input name="kontakt" placeholder="E-Mail oder Telefon" required />
+      <select name="format"><option>1:1 Personal Training</option><option>Online Coaching</option><option>Firmenfitness / Office Fitness</option><option>Noch unsicher</option></select>
+      <textarea name="nachricht" rows="4" placeholder="Ziel, größte Hürde, Ort/Bezirk oder Teamgröße"></textarea>
+      <button class="btn primary" type="submit">Anfrage vormerken</button>
+      <p class="seo-note">Hinweis: Preview-Formular. Datenschutz-Link statt Pflicht-Checkbox, weil Kontaktanfrage/Vertragsanbahnung.</p>
+    </form>
+  </div>
+</section>
+</BaseLayout>

@@ -1,0 +1,25 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+<BaseLayout title="4-ME Method | Michelle Emminger Personal Training Wien" description="Michelles 4-ME Method verbindet Körper, Mindset, Alltag und Erfolg zu alltagstauglichem Personal Training in Wien." canonical="/4-me-method/" image="/assets/method.webp">
+<section class="service-hero"><div class="container split"><div><p class="breadcrumbs"><a href="/">Start</a> / Die 4-ME Method: Training, das nicht nur deinen Körper sieht.</p><h1 class="page-title">Die 4-ME Method: Training, das nicht nur deinen Körper sieht.</h1><p class="lead">My Body. My Mind. My Life. My Success. Ein Rahmen aus eigener Transformation, Fachwissen und Coaching-Erfahrung — angewendet auf dein echtes Leben.</p><div class="hero-actions"><a class="btn primary" href="#anfrage">Anfrage starten</a><a class="btn light" href="/4-me-method/">Methode ansehen</a></div></div><div class="image-card"><img src="/assets/method.webp" alt="Die 4-ME Method: Training, das nicht nur deinen Körper sieht." loading="eager"/></div></div></section>
+<section class="section"><div class="container split"><div><p class="eyebrow">Warum sie entstand</p><h2>„Einfach mehr Disziplin“ greift zu kurz.</h2><p class="lead">Michelle kennt Start-Stopp-Muster, Selbstzweifel, Rückenprobleme und den Weg zurück in Bewegung aus eigener Erfahrung. Die Methode fragt deshalb nicht nur: Welche Übung? Sondern: Was hält dich bisher wirklich zurück?</p></div><div class="grid"><div class="card"><h3>Eigene Transformation</h3><p>20 kg Gewichtsverlust als persönlicher Proof — ohne daraus ein oberflächliches Abnehmversprechen zu machen.</p></div><div class="card"><h3>Fachliche Basis</h3><p>Fitness-, Gesundheits- und Functional-Training bilden die sichere Grundlage.</p></div></div></div></section><section class="section alt"><div class="container"><p class="eyebrow">Vier Säulen</p><h2>Die Methode als klares Entscheidungssystem.</h2><div class="grid four"><div class="card"><h3>My Body</h3><p>Kraft, Mobilität, Haltung, Technik und Belastbarkeit passend zum Ausgangspunkt.</p></div><div class="card"><h3>My Mind</h3><p>Motivation, Routinen, Selbstzweifel und Rückschläge realistisch einordnen.</p></div><div class="card"><h3>My Life</h3><p>Zeitfenster, Energie, Trainingort und Woche so planen, dass Umsetzung möglich bleibt.</p></div><div class="card"><h3>My Success</h3><p>Erfolg als Kraft, Energie, Schmerzfreiheit, Körpergefühl, Selbstvertrauen und Dranbleiben definieren.</p></div></div></div></section><section class="section"><div class="container"><div class="band"><h2>Du brauchst keinen perfekten Neustart. Du brauchst ein System, das dich wieder auffängt.</h2><p>Die 4-ME Method ist kein fixes Programm. Sie ist ein Rahmen für persönliche Betreuung, Online Coaching und Firmenfitness.</p></div></div></section>
+<section class="section alt" id="anfrage">
+  <div class="container split">
+    <div>
+      <p class="eyebrow">Nächster Schritt</p>
+      <h2>Kurz klären, ob es passt.</h2>
+      <p class="lead">Schick Michelle kurz Ziel, Ausgangssituation und gewünschtes Format. In der Preview wird noch nichts produktiv versendet.</p>
+      <ul class="checklist"><li>15–20 Minuten Kennenlernen</li><li>Training, Online Coaching oder B2B-Pilot einordnen</li><li>Keine Verpflichtung, kein Druck</li></ul>
+    </div>
+    <form class="card form" name="preview-anfrage" action="/danke/" method="get">
+      <input name="name" placeholder="Name" required />
+      <input name="kontakt" placeholder="E-Mail oder Telefon" required />
+      <select name="format"><option>1:1 Personal Training</option><option>Online Coaching</option><option>Firmenfitness / Office Fitness</option><option>Noch unsicher</option></select>
+      <textarea name="nachricht" rows="4" placeholder="Ziel, größte Hürde, Ort/Bezirk oder Teamgröße"></textarea>
+      <button class="btn primary" type="submit">Anfrage vormerken</button>
+      <p class="seo-note">Hinweis: Preview-Formular. Datenschutz-Link statt Pflicht-Checkbox, weil Kontaktanfrage/Vertragsanbahnung.</p>
+    </form>
+  </div>
+</section>
+</BaseLayout>

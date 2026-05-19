@@ -1,0 +1,25 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+<BaseLayout title="Über Michelle Emminger | Personal Trainerin Wien" description="Michelle Emminger: Personal Trainerin in Wien mit eigener 20-kg-Transformation, Gesundheits- und Functional-Training-Fokus." canonical="/ueber-mich/" image="/assets/about.webp">
+<section class="service-hero"><div class="container split"><div><p class="breadcrumbs"><a href="/">Start</a> / Ich weiß, wie sich der Kampf anfühlt.</p><h1 class="page-title">Ich weiß, wie sich der Kampf anfühlt.</h1><p class="lead">Michelle war selbst 20 Kilogramm schwerer, kennt Rückenprobleme und den mentalen Teil von Veränderung. Heute begleitet sie Menschen klar, empathisch und ohne Urteil.</p><div class="hero-actions"><a class="btn primary" href="#anfrage">Anfrage starten</a><a class="btn light" href="/4-me-method/">Methode ansehen</a></div></div><div class="image-card"><img src="/assets/about.webp" alt="Ich weiß, wie sich der Kampf anfühlt." loading="eager"/></div></div></section>
+<section class="section"><div class="container split"><div><p class="eyebrow">From struggle to strength</p><h2>Aus Erfahrung wurde eine Methode.</h2><p class="lead">Der persönliche Weg ist kein Show-Element, sondern ein Vertrauensbaustein: Michelle versteht, dass Veränderung nicht an einem perfekten Plan hängt, sondern an machbaren Schritten, Sicherheit und Dranbleiben.</p><ul class="checklist"><li>eigene 20-kg-Veränderung</li><li>mehrjährige Trainings- und Coaching-Erfahrung</li><li>Fokus auf Gesundheits- und Functional Training</li></ul></div><div class="grid"><div class="image-card"><img src="/assets/before-1.webp" alt="Michelle früher als Transformationsbild" loading="lazy"/></div></div></div></section><section class="section alt"><div class="container"><p class="eyebrow">Arbeitsweise</p><h2>Klar, sympathisch, ohne erhobenen Zeigefinger.</h2><div class="grid three"><div class="card"><h3>Empathisch</h3><p>Keine Beschämung. Keine Fitness-Show. Kein Urteil.</p></div><div class="card"><h3>Strukturiert</h3><p>Ziele, Ausgangspunkt, Plan und Anpassungen werden sauber geführt.</p></div><div class="card"><h3>Praktisch</h3><p>Training muss mit Alltag, Ort und Energielevel funktionieren.</p></div></div></div></section>
+<section class="section alt" id="anfrage">
+  <div class="container split">
+    <div>
+      <p class="eyebrow">Nächster Schritt</p>
+      <h2>Kurz klären, ob es passt.</h2>
+      <p class="lead">Schick Michelle kurz Ziel, Ausgangssituation und gewünschtes Format. In der Preview wird noch nichts produktiv versendet.</p>
+      <ul class="checklist"><li>15–20 Minuten Kennenlernen</li><li>Training, Online Coaching oder B2B-Pilot einordnen</li><li>Keine Verpflichtung, kein Druck</li></ul>
+    </div>
+    <form class="card form" name="preview-anfrage" action="/danke/" method="get">
+      <input name="name" placeholder="Name" required />
+      <input name="kontakt" placeholder="E-Mail oder Telefon" required />
+      <select name="format"><option>1:1 Personal Training</option><option>Online Coaching</option><option>Firmenfitness / Office Fitness</option><option>Noch unsicher</option></select>
+      <textarea name="nachricht" rows="4" placeholder="Ziel, größte Hürde, Ort/Bezirk oder Teamgröße"></textarea>
+      <button class="btn primary" type="submit">Anfrage vormerken</button>
+      <p class="seo-note">Hinweis: Preview-Formular. Datenschutz-Link statt Pflicht-Checkbox, weil Kontaktanfrage/Vertragsanbahnung.</p>
+    </form>
+  </div>
+</section>
+</BaseLayout>

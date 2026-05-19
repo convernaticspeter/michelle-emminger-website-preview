@@ -1,0 +1,25 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+<BaseLayout title="Kontakt | Michelle Emminger" description="Erstgespräch mit Michelle Emminger anfragen: 1:1 Training, Online Coaching oder Firmenfitness in Wien." canonical="/kontakt/">
+<section class="service-hero"><div class="container"><p class="breadcrumbs"><a href="/">Start</a> / Kontakt</p><h1 class="page-title">Lass uns kurz klären, welcher Start passt.</h1><p class="lead">Einheitliche Regel für die neue Preview: 15–20 Minuten unverbindliches Kennenlernen per Telefon oder Video. Danach entscheidet ihr, ob Probetraining, Online Coaching oder B2B-Pilot Sinn macht.</p></div></section>
+
+<section class="section alt" id="anfrage">
+  <div class="container split">
+    <div>
+      <p class="eyebrow">Nächster Schritt</p>
+      <h2>Kurz klären, ob es passt.</h2>
+      <p class="lead">Schick Michelle kurz Ziel, Ausgangssituation und gewünschtes Format. In der Preview wird noch nichts produktiv versendet.</p>
+      <ul class="checklist"><li>15–20 Minuten Kennenlernen</li><li>Training, Online Coaching oder B2B-Pilot einordnen</li><li>Keine Verpflichtung, kein Druck</li></ul>
+    </div>
+    <form class="card form" name="preview-anfrage" action="/danke/" method="get">
+      <input name="name" placeholder="Name" required />
+      <input name="kontakt" placeholder="E-Mail oder Telefon" required />
+      <select name="format"><option>1:1 Personal Training</option><option>Online Coaching</option><option>Firmenfitness / Office Fitness</option><option>Noch unsicher</option></select>
+      <textarea name="nachricht" rows="4" placeholder="Ziel, größte Hürde, Ort/Bezirk oder Teamgröße"></textarea>
+      <button class="btn primary" type="submit">Anfrage vormerken</button>
+      <p class="seo-note">Hinweis: Preview-Formular. Datenschutz-Link statt Pflicht-Checkbox, weil Kontaktanfrage/Vertragsanbahnung.</p>
+    </form>
+  </div>
+</section>
+</BaseLayout>
