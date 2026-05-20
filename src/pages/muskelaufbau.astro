@@ -1,26 +1,19 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import FAQ from '../components/FAQ.astro';
+import Inquiry from '../components/Inquiry.astro';
+const faq = [
+  { q: 'Wie funktioniert Muskelaufbau mit Personal Training?', a: 'Muskelaufbau funktioniert durch sinnvolle Belastung, saubere Technik, regelmäßige Progression, Erholung und passende Routinen. Im Personal Training achtet Michelle darauf, dass du nicht nur mehr machst, sondern besser und kontrollierter trainierst.' },
+  { q: 'Ist Muskelaufbau auch ab 40 möglich?', a: 'Ja. Muskelaufbau ist auch ab 40 möglich und oft besonders wertvoll für Haltung, Stoffwechsel, Alltag und Selbstvertrauen. Wichtig ist ein realistischer Aufbau, der Regeneration, Technik und Lebenssituation berücksichtigt.' },
+  { q: 'Brauche ich schwere Gewichte?', a: 'Schwere Gewichte können später sinnvoll sein, sind aber nicht der Anfangspunkt für alle. Entscheidend sind Technik, Kontrolle, passende Belastung und schrittweise Steigerung.' },
+  { q: 'Warum ist Michelle nicht auf Ego-Training ausgerichtet?', a: 'Michelle legt Wert auf Fortschritt ohne Show. Muskelaufbau soll dich stärker, sicherer und belastbarer machen — nicht dazu führen, dass du dich mit falscher Technik überforderst.' }
+];
 ---
-<BaseLayout title="Muskelaufbau Personal Training Wien | Michelle Emminger" description="Muskelaufbau in Wien mit Michelle Emminger: Krafttraining, Technik, Progression und alltagstaugliche Routinen für Erwachsene 40+." canonical="/muskelaufbau/" image="/assets/muscle.webp">
-<section class="service-hero"><div class="container split"><div><p class="breadcrumbs"><a href="/">Start</a> / Muskelaufbau</p><p class="eyebrow">Kraft & Technik</p><h1 class="page-title">Muskelaufbau, der nicht auf Ego basiert — sondern auf sauberer Progression.</h1><p class="lead">Für alle, die stärker, straffer und belastbarer werden wollen, ohne blind Gewichte zu erhöhen. Michelle setzt auf Technik, passende Belastung und nachvollziehbaren Fortschritt.</p><div class="hero-actions"><a class="btn primary" href="#anfrage">Training anfragen</a><a class="btn light" href="/personal-training-wien/">1:1 Training</a></div></div><div class="image-card"><img src="/assets/muscle.webp" alt="Muskelaufbau Personal Training Wien" loading="eager"/></div></div></section>
-<section class="section"><div class="container"><p class="eyebrow">Schwerpunkte</p><h2>Stark werden, ohne dich kaputt zu trainieren.</h2><div class="grid three"><div class="card"><h3>Technik zuerst</h3><p>Saubere Ausführung vor Laststeigerung.</p></div><div class="card"><h3>Planbare Progression</h3><p>Reize steigern, wenn dein Körper bereit ist.</p></div><div class="card"><h3>Alltagstauglich</h3><p>Training so planen, dass es langfristig machbar bleibt.</p></div></div></div></section>
-
-<section class="section alt" id="anfrage">
-  <div class="container split">
-    <div>
-      <p class="eyebrow">Nächster Schritt</p>
-      <h2>Kurz klären, ob es passt.</h2>
-      <p class="lead">Schick Michelle kurz Ziel, Ausgangssituation und gewünschtes Format. In der Preview wird noch nichts produktiv versendet.</p>
-      <ul class="checklist"><li>15–20 Minuten Kennenlernen</li><li>Training, Online Coaching oder B2B-Pilot einordnen</li><li>Keine Verpflichtung, kein Druck</li></ul>
-    </div>
-    <form class="card form" name="preview-anfrage" action="/danke/" method="get">
-      <input name="name" placeholder="Name" required />
-      <input name="kontakt" placeholder="E-Mail oder Telefon" required />
-      <select name="format"><option>1:1 Personal Training</option><option>Online Coaching</option><option>Firmenfitness / Office Fitness</option><option>Noch unsicher</option></select>
-      <textarea name="nachricht" rows="4" placeholder="Ziel, größte Hürde, Ort/Bezirk oder Teamgröße"></textarea>
-      <button class="btn primary" type="submit">Anfrage vormerken</button>
-      <p class="seo-note">Preview-Formular. Für Produktion später echte Zieladresse/Terminbuchung ergänzen.</p>
-    </form>
-  </div>
-</section>
+<BaseLayout title="Muskelaufbau Personal Training Wien | Michelle Emminger" description="Muskelaufbau Personal Training in Wien: Kraft, Technik und Progression sauber aufbauen — ohne Ego-Training, mit Michelles 4-ME Method." canonical="/muskelaufbau/" image="/assets/muscle.webp" faq={faq} serviceName="Muskelaufbau Personal Training Wien">
+<section class="service-hero"><div class="container split"><div><p class="breadcrumbs"><a href="/">Start</a> / Muskelaufbau</p><p class="eyebrow">Kraft · Technik · Progression</p><h1 class="page-title">Muskelaufbau Personal Training in Wien — stark werden ohne Ego-Training.</h1><p class="lead">Für Menschen, die Kraft aufbauen wollen, ohne sich mit falscher Technik, Druck oder planlosem Training zu überfordern.</p><div class="hero-actions"><a class="btn primary" href="#anfrage">Muskelaufbau anfragen</a><a class="btn light" href="/4-me-method/">Methode ansehen</a></div></div><div class="image-card"><img src="/assets/muscle.webp" alt="Muskelaufbau Personal Training mit Michelle Emminger in Wien" loading="eager" fetchpriority="high"/></div></div></section>
+<section class="section"><div class="container narrow"><p class="eyebrow">Direkte Antwort</p><h2>Wie baut man mit Michelle sinnvoll Muskeln auf?</h2><p class="answer-block">Muskelaufbau mit Michelle Emminger bedeutet, Kraft, Technik und Progression sauber zu verbinden. Im Personal Training in Wien wird nicht blind mehr Gewicht bewegt, sondern kontrolliert aufgebaut: mit passender Belastung, guter Ausführung, Regeneration und Routinen, die im Alltag halten.</p><p>Viele Menschen verbinden Muskelaufbau mit jungen Gym-Klischees, lauter Motivation und maximaler Härte. Michelles Ansatz ist ruhiger und präziser: Du sollst stärker werden, deinen Körper besser verstehen und Fortschritt spüren, ohne dich ständig zu überfordern.</p></div></section>
+<section class="section alt"><div class="container split"><div><p class="eyebrow">Für wen?</p><h2>Für alle, die stärker werden wollen — aber sauber.</h2><ul class="checklist"><li>du möchtest gezielt Kraft und Form aufbauen</li><li>du willst Übungen richtig verstehen und ausführen</li><li>du bist 40+ und möchtest belastbarer werden</li><li>du willst Fortschritt ohne Fitness-Show</li><li>du möchtest Muskelaufbau mit Alltag, Energie und Ernährung verbinden</li></ul></div><div class="card dark"><h3>Mehr Gewicht ist nicht automatisch mehr Fortschritt.</h3><p>Erst wenn Technik, Spannung, Bewegungsqualität und Belastung zusammenpassen, wird Steigerung sinnvoll.</p></div></div></section>
+<section class="section"><div class="container"><p class="eyebrow">Prinzipien</p><h2>Muskelaufbau braucht Struktur, nicht nur Motivation.</h2><div class="grid four"><div class="card"><h3>Technik</h3><p>Saubere Bewegung schafft Sicherheit und bessere Trainingsreize.</p></div><div class="card"><h3>Progression</h3><p>Belastung wird sinnvoll gesteigert, nicht zufällig erhöht.</p></div><div class="card"><h3>Regeneration</h3><p>Fortschritt braucht Erholung, Schlaf, Ernährung und realistische Wochenplanung.</p></div><div class="card"><h3>Körpergefühl</h3><p>Du lernst, was Anstrengung, Kontrolle und Überlastung unterscheidet.</p></div></div></div></section>
+<FAQ items={faq} />
+<Inquiry format="1:1 Personal Training" />
 </BaseLayout>

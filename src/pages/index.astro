@@ -1,47 +1,32 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import FAQ from '../components/FAQ.astro';
+import Inquiry from '../components/Inquiry.astro';
+const faq = [
+  { q: 'Was macht Michelle Emminger?', a: 'Michelle Emminger ist Personal-, Gesundheits- und Functional Trainerin in Wien. Sie bietet 1:1 Personal Training, Online Coaching und Firmenfitness an und arbeitet mit ihrer 4-ME Method: My Body, My Mind, My Life und My Success.' },
+  { q: 'Für wen ist Michelle die richtige Trainerin?', a: 'Michelle passt besonders für Menschen 40+, die wieder Kraft, Energie, Haltung und Vertrauen in den eigenen Körper aufbauen wollen. Ihre Arbeit ist persönlich, klar und empathisch — ohne Fitness-Theater, aber mit verbindlicher Begleitung.' },
+  { q: 'Was bedeutet From Struggle to Strength?', a: 'From Struggle to Strength beschreibt Michelles eigene Geschichte und ihre Arbeitsweise. Sie kennt körperliche Rückschläge, Selbstzweifel und Veränderung aus eigener Erfahrung und nutzt diese Perspektive, um Menschen auf Augenhöhe zu begleiten.' },
+  { q: 'Was ist die 4-ME Method?', a: 'Die 4-ME Method ist Michelles Trainingsansatz. Er verbindet Körper, mentale Stärke, Alltag und Fortschritt. Dadurch wird Training nicht als isolierter Plan verstanden, sondern als System, das in ein echtes Leben passen muss.' }
+];
 ---
-<BaseLayout title="Michelle Emminger | Personal Training Wien & Firmenfitness" description="Personal Training in Wien für Menschen 40+ und Office Fitness für Teams: Michelles 4-ME Method verbindet Körper, Mindset, Alltag und messbaren Fortschritt." canonical="/">
+<BaseLayout title="Michelle Emminger | Personal Training Wien & Firmenfitness" description="Personal Training in Wien, Online Coaching und Firmenfitness nach der 4-ME Method: Michelle Emminger begleitet Menschen von Struggle zu Strength." canonical="/" faq={faq}>
 <section class="hero">
   <div class="container">
     <div>
       <p class="eyebrow">Personal Training Wien · Firmenfitness · Online Coaching</p>
       <h1>Become your best ME.</h1>
-      <p>Training für Menschen, die nicht noch einen zufälligen Plan brauchen, sondern persönliche Begleitung: klar, empathisch und so aufgebaut, dass Körper, Kopf, Alltag und Ziel zusammenpassen.</p>
-      <div class="hero-actions"><a class="btn mint" href="/kontakt/">Kennenlernen anfragen</a><a class="btn ghost" href="/4-me-method/">4-ME Method ansehen</a></div>
-      <div class="trust-row"><span class="pill">From Struggle to Strength</span><span class="pill">20 kg eigene Transformation</span><span class="pill">Wien · online · hybrid</span></div>
+      <p>Personal Training für Menschen, die nicht noch einen zufälligen Plan brauchen, sondern Begleitung, die Körper, Kopf, Alltag und Fortschritt zusammenbringt.</p>
+      <div class="hero-actions"><a class="btn mint" href="/kontakt/">Einschätzung anfragen</a><a class="btn ghost" href="/4-me-method/">4-ME Method ansehen</a></div>
+      <div class="trust-row"><span class="pill">From Struggle to Strength</span><span class="pill">Eigene Transformation</span><span class="pill">Wien · online · hybrid</span></div>
     </div>
-    <div class="hero-card"><img src="/assets/hero-training.webp" alt="Michelle Emminger beim Personal Training in Wien" loading="eager"/><div class="hero-badge">Für Erwachsene 40+, die wieder Energie, Haltung, Kraft und Vertrauen in den eigenen Körper aufbauen wollen.</div></div>
+    <div class="hero-card"><img src="/assets/hero-training.webp" alt="Michelle Emminger beim Personal Training in Wien" loading="eager" fetchpriority="high"/><div class="hero-badge">Für Erwachsene 40+, die wieder Kraft, Energie, Haltung und Vertrauen in den eigenen Körper aufbauen wollen.</div></div>
   </div>
 </section>
-<section class="section alt">
-  <div class="container split">
-    <div><p class="eyebrow">Positionierung</p><h2>Ich weiß, wie sich der Kampf anfühlt — und wie Veränderung möglich wird.</h2><p class="lead">Epilepsie, Rückenprobleme, 20 kg Übergewicht: Michelles Weg ist der Kern der Marke. Nicht als Drama, sondern als Beweis, dass Training erst dann nachhaltig wird, wenn Menschen sich verstanden fühlen.</p><p>Genau deshalb ist die Seite nicht auf „härter, schneller, perfekter“ gebaut. Sie steht für hochwertige Betreuung ohne Luxusgehabe, klare Technik, echte Routinen und einen Weg, der in ein normales Leben passt.</p><div class="anchor-list"><a href="/ueber-mich/">Michelles Story</a><a href="/personal-training-wien/">Personal Training</a><a href="/firmenfitness/">Firmenfitness</a></div></div>
-    <div class="method-strip"><div><strong>My Body</strong><span class="mini-kicker">Körper verstehen</span></div><div><strong>My Mind</strong><span class="mini-kicker">Dranbleiben lernen</span></div><div><strong>My Life</strong><span class="mini-kicker">Alltag einbauen</span></div><div><strong>My Success</strong><span class="mini-kicker">Erfolg definieren</span></div></div>
-  </div>
-</section>
-<section class="section">
- <div class="container"><p class="eyebrow">Angebote</p><h2>Zwei Wege. Eine klare Methode.</h2><div class="grid three"><div class="card"><div class="num">1</div><h3>1:1 Personal Training</h3><p>Für Menschen in Wien, die Technik, Kraft, Haltung und Routine persönlich aufbauen wollen — besonders nach längeren Pausen, Schmerzen oder Start-Stopp-Mustern.</p><a class="btn light" href="/personal-training-wien/">Personal Training ansehen</a></div><div class="card"><div class="num">2</div><h3>Online & Hybrid Coaching</h3><p>Für alle, die flexible Betreuung brauchen: Trainingsplan, Feedback, Technik-Checks und Struktur, ohne an einen Ort gebunden zu sein.</p><a class="btn light" href="/online-coaching/">Online Coaching ansehen</a></div><div class="card"><div class="num">3</div><h3>Firmenfitness</h3><p>Office Fitness für Teams in Wien: kurze Einheiten gegen Sitz-Alltag, Nacken/Rücken-Themen und Energietiefs — professionell, niedrigschwellig, testbar.</p><a class="btn light" href="/firmenfitness/">B2B-Pilot ansehen</a></div></div></div>
-</section>
-<section class="section alt"><div class="container split"><div class="image-card"><img src="/assets/about.webp" alt="Michelle Emminger Portrait" loading="lazy"/></div><div><p class="eyebrow">Warum Michelle</p><h2>Empathisch genug, um dich zu verstehen. Klar genug, um dich zu führen.</h2><ul class="checklist"><li>Mehrfach diplomierte Personal-, Gesundheits- und Functional Trainerin</li><li>Über 1000 Stunden Coaching-Erfahrung</li><li>Technik zuerst: präzise Ausführung vor mehr Gewicht</li><li>Kein Urteil, kein Fitness-Theater, keine Wunder-Versprechen</li></ul><p><a class="btn primary" href="/ueber-mich/">Mehr über Michelle</a></p></div></div></section>
+<section class="section"><div class="container narrow"><p class="eyebrow">Positionierung</p><h2>Training wird erst nachhaltig, wenn sich der Mensch dahinter verstanden fühlt.</h2><p class="answer-block">Michelle Emminger steht für Personal Training in Wien, das aus eigener Erfahrung entstanden ist: von körperlichem Kampf, Unsicherheit und Rückschlägen hin zu Stärke, Routine und Selbstvertrauen. Ihre 4-ME Method verbindet Training, Mindset, Alltag und Erfolg zu einem klaren, persönlichen Weg.</p><p>Die Seite ist bewusst nicht auf „härter, schneller, perfekter“ gebaut. Michelles Marke steht für hochwertige Betreuung ohne Luxusgehabe, präzise Technik, klare Sprache und einen Weg, der zu einem normalen Leben passt. Wer hier anfragt, soll nicht das Gefühl haben, bewertet zu werden — sondern endlich sauber einordnen können, was der nächste sinnvolle Schritt ist.</p></div></section>
+<section class="section alt"><div class="container split"><div><p class="eyebrow">Die 4-ME Method</p><h2>Vier Bereiche, ein Ziel: Veränderung, die bleibt.</h2><p>Viele Trainingspläne scheitern, weil sie nur den Körper sehen. Michelle arbeitet anders: Der Körper braucht Reize, der Kopf braucht Sicherheit, der Alltag braucht einfache Routinen und Erfolg muss so definiert werden, dass er motiviert statt Druck macht.</p><div class="anchor-list"><a href="/4-me-method/">Methode im Detail</a><a href="/personal-training-wien/">Personal Training</a><a href="/firmenfitness/">Firmenfitness</a></div></div><div class="method-strip"><div><strong>My Body</strong><span class="mini-kicker">Kraft, Haltung, Technik</span></div><div><strong>My Mind</strong><span class="mini-kicker">Sicherheit und Dranbleiben</span></div><div><strong>My Life</strong><span class="mini-kicker">Routinen im Alltag</span></div><div><strong>My Success</strong><span class="mini-kicker">Fortschritt sichtbar machen</span></div></div></div></section>
+<section class="section"><div class="container"><p class="eyebrow">Angebote</p><h2>Der richtige Einstieg hängt davon ab, wo der Kampf gerade liegt.</h2><div class="grid three"><div class="card"><div class="num">1</div><h3>Personal Training Wien</h3><p>1:1 Betreuung für Kraft, Haltung, Technik, Rücken, Muskelaufbau und Wiedereinstieg. Persönlich, präzise und auf deinen Alltag abgestimmt.</p><a class="btn light" href="/personal-training-wien/">Personal Training ansehen</a></div><div class="card"><div class="num">2</div><h3>Online & Hybrid Coaching</h3><p>Struktur, Feedback und klare Trainingsplanung, wenn du flexibel bleiben musst oder zwischen Einheiten Begleitung brauchst.</p><a class="btn light" href="/online-coaching/">Online Coaching ansehen</a></div><div class="card"><div class="num">3</div><h3>Firmenfitness Wien</h3><p>Office Fitness für Teams: kurze Einheiten gegen Sitz-Alltag, Nacken- und Rückenthemen, Energietiefs und Bewegungsmangel im Büro.</p><a class="btn light" href="/firmenfitness/">B2B-Pilot ansehen</a></div></div></div></section>
+<section class="section alt"><div class="container split"><div class="image-card"><img src="/assets/about.webp" alt="Michelle Emminger Portrait" loading="lazy"/></div><div><p class="eyebrow">Warum Michelle</p><h2>Empathisch genug, um dich zu verstehen. Klar genug, um dich zu führen.</h2><p>Michelle kennt Selbstzweifel, körperliche Grenzen und das Gefühl, sich im eigenen Körper fremd zu fühlen. Genau deshalb klingt ihre Arbeit nicht nach Fitness-Floskeln, sondern nach echter Begleitung: zuhören, einordnen, anleiten, korrigieren und weitergehen.</p><ul class="checklist"><li>Mehrfach diplomierte Personal-, Gesundheits- und Functional Trainerin</li><li>Eigene Transformation: Rückenprobleme, Epilepsie, 20 kg Übergewicht</li><li>Technik zuerst: präzise Ausführung vor mehr Gewicht</li><li>Kein Urteil, kein Fitness-Theater, keine Wunder-Versprechen</li></ul><p><a class="btn primary" href="/ueber-mich/">Mehr über Michelle</a></p></div></div></section>
 <section class="section"><div class="container"><div class="band"><p class="eyebrow">Kernbotschaft</p><div class="quote">„Ich trainiere nicht nur Körper. Ich begleite Menschen, die echte Veränderung wollen.“</div><p>Die 4-ME Method macht Michelles Ansatz greifbar: Körper, Kopf, Alltag und Erfolg gehören zusammen.</p><a class="btn mint" href="/4-me-method/">Methode genauer ansehen</a></div></div></section>
-
-<section class="section alt" id="anfrage">
-  <div class="container split">
-    <div>
-      <p class="eyebrow">Nächster Schritt</p>
-      <h2>Kurz klären, ob es passt.</h2>
-      <p class="lead">Schick Michelle kurz Ziel, Ausgangssituation und gewünschtes Format. In der Preview wird noch nichts produktiv versendet.</p>
-      <ul class="checklist"><li>15–20 Minuten Kennenlernen</li><li>Training, Online Coaching oder B2B-Pilot einordnen</li><li>Keine Verpflichtung, kein Druck</li></ul>
-    </div>
-    <form class="card form" name="preview-anfrage" action="/danke/" method="get">
-      <input name="name" placeholder="Name" required />
-      <input name="kontakt" placeholder="E-Mail oder Telefon" required />
-      <select name="format"><option>1:1 Personal Training</option><option>Online Coaching</option><option>Firmenfitness / Office Fitness</option><option>Noch unsicher</option></select>
-      <textarea name="nachricht" rows="4" placeholder="Ziel, größte Hürde, Ort/Bezirk oder Teamgröße"></textarea>
-      <button class="btn primary" type="submit">Anfrage vormerken</button>
-      <p class="seo-note">Preview-Formular. Für Produktion später echte Zieladresse/Terminbuchung ergänzen.</p>
-    </form>
-  </div>
-</section>
+<FAQ items={faq} />
+<Inquiry />
 </BaseLayout>

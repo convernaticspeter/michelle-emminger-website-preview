@@ -1,27 +1,19 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import FAQ from '../components/FAQ.astro';
+import Inquiry from '../components/Inquiry.astro';
+const faq = [
+  { q: 'Was ist Online Coaching mit Michelle Emminger?', a: 'Online Coaching mit Michelle ist flexible Betreuung für Training, Struktur und Fortschritt, wenn du nicht regelmäßig vor Ort trainieren kannst. Du bekommst Orientierung, Feedback und Anpassung, ohne an einen festen Ort gebunden zu sein.' },
+  { q: 'Für wen ist Online Coaching geeignet?', a: 'Online Coaching passt, wenn du eigenständig trainieren kannst, aber klare Struktur, Feedback und Verbindlichkeit brauchst. Es eignet sich für Menschen mit unregelmäßigem Alltag, Reisen, Familie oder wenig Zeit.' },
+  { q: 'Ist Online Coaching auch für Anfänger sinnvoll?', a: 'Ja, wenn die Übungen sauber erklärt und regelmäßig überprüft werden. Bei starker Unsicherheit oder komplexeren Einschränkungen kann ein hybrider Einstieg mit persönlichen Einheiten sinnvoller sein.' },
+  { q: 'Was unterscheidet Online Coaching von einem Trainingsplan?', a: 'Ein Plan ist statisch. Coaching reagiert auf deinen Alltag, deine Rückmeldungen, deine Technik und deinen Fortschritt. Genau dadurch bleibt die Betreuung lebendig und nicht nur eine PDF-Datei.' }
+];
 ---
-<BaseLayout title="Online Coaching | Michelle Emminger" description="Online Coaching mit Michelle Emminger: Trainingsstruktur, Feedback und Technik-Checks flexibel für zuhause, Studio oder Reisen." canonical="/online-coaching/" image="/assets/online.webp">
-<section class="service-hero"><div class="container split"><div><p class="breadcrumbs"><a href="/">Start</a> / Online Coaching</p><p class="eyebrow">Online & Hybrid Coaching</p><h1 class="page-title">Struktur und Feedback, auch wenn dein Alltag nicht planbar ist.</h1><p class="lead">Für Menschen, die flexibel trainieren möchten und trotzdem persönliche Begleitung brauchen: Plan, Technik-Check, Anpassung und Dranbleiben mit Michelles 4-ME Method.</p><div class="hero-actions"><a class="btn primary" href="#anfrage">Online Coaching anfragen</a><a class="btn light" href="/4-me-method/">Methode ansehen</a></div></div><div class="image-card"><img src="/assets/online.webp" alt="Online Coaching mit Michelle Emminger" loading="eager"/></div></div></section>
-<section class="section"><div class="container"><p class="eyebrow">Für wen?</p><h2>Wenn du Flexibilität brauchst, aber nicht allein trainieren willst.</h2><div class="grid three"><div class="card"><h3>Zuhause oder Studio</h3><p>Training mit deiner Ausstattung, deinem Ort und deinem Zeitfenster.</p></div><div class="card"><h3>Technik-Feedback</h3><p>Videos, Checks und Anpassungen, damit du Übungen sicher ausführst.</p></div><div class="card"><h3>Hybrid möglich</h3><p>Online-Begleitung mit einzelnen persönlichen Einheiten in Wien kombinieren.</p></div></div></div></section>
-<section class="section alt"><div class="container split"><div><p class="eyebrow">Inhalte</p><h2>Kein App-Plan, der dich nach zwei Wochen verliert.</h2><ul class="checklist"><li>Trainingsplan passend zu Ziel, Alltag und Energie</li><li>Regelmäßige Anpassung statt starrem PDF</li><li>Feedback zu Ausführung und Belastung</li><li>Routinen für volle Wochen statt Alles-oder-nichts</li><li>Optional Fokus Rücken, Muskelaufbau oder Wiedereinstieg</li></ul></div><div class="card dark"><h3>My Life zählt hier besonders.</h3><p>Online Coaching funktioniert nur, wenn es zu deinem echten Leben passt. Genau dafür ist die 4-ME Method gebaut.</p></div></div></section>
-
-<section class="section alt" id="anfrage">
-  <div class="container split">
-    <div>
-      <p class="eyebrow">Nächster Schritt</p>
-      <h2>Kurz klären, ob es passt.</h2>
-      <p class="lead">Schick Michelle kurz Ziel, Ausgangssituation und gewünschtes Format. In der Preview wird noch nichts produktiv versendet.</p>
-      <ul class="checklist"><li>15–20 Minuten Kennenlernen</li><li>Training, Online Coaching oder B2B-Pilot einordnen</li><li>Keine Verpflichtung, kein Druck</li></ul>
-    </div>
-    <form class="card form" name="preview-anfrage" action="/danke/" method="get">
-      <input name="name" placeholder="Name" required />
-      <input name="kontakt" placeholder="E-Mail oder Telefon" required />
-      <select name="format"><option>1:1 Personal Training</option><option>Online Coaching</option><option>Firmenfitness / Office Fitness</option><option>Noch unsicher</option></select>
-      <textarea name="nachricht" rows="4" placeholder="Ziel, größte Hürde, Ort/Bezirk oder Teamgröße"></textarea>
-      <button class="btn primary" type="submit">Anfrage vormerken</button>
-      <p class="seo-note">Preview-Formular. Für Produktion später echte Zieladresse/Terminbuchung ergänzen.</p>
-    </form>
-  </div>
-</section>
+<BaseLayout title="Online Coaching | Michelle Emminger" description="Online Coaching mit Michelle Emminger: strukturierte Trainingsbetreuung, Feedback und 4-ME Method für Menschen mit flexiblem Alltag." canonical="/online-coaching/" image="/assets/online.webp" faq={faq} serviceName="Online Coaching Fitness">
+<section class="service-hero"><div class="container split"><div><p class="breadcrumbs"><a href="/">Start</a> / Online Coaching</p><p class="eyebrow">Flexibel begleitet</p><h1 class="page-title">Online Coaching, wenn dein Alltag nicht in einen fixen Studiokalender passt.</h1><p class="lead">Struktur, Feedback und ein Trainingsrahmen, der mit deinem Leben arbeitet — nicht gegen deinen Kalender.</p><div class="hero-actions"><a class="btn primary" href="#anfrage">Einschätzung anfragen</a><a class="btn light" href="/personal-training-wien/">1:1 Training vergleichen</a></div></div><div class="image-card"><img src="/assets/online.webp" alt="Online Coaching mit Michelle Emminger" loading="eager" fetchpriority="high"/></div></div></section>
+<section class="section"><div class="container narrow"><p class="eyebrow">Direkte Antwort</p><h2>Was bedeutet Online Coaching bei Michelle?</h2><p class="answer-block">Online Coaching mit Michelle Emminger ist flexible Trainingsbetreuung für Menschen, die Struktur, Feedback und Fortschritt brauchen, aber nicht regelmäßig vor Ort trainieren können. Die 4-ME Method sorgt dafür, dass Training, Mindset, Alltag und Erfolg zusammen betrachtet werden.</p><p>Online Coaching ist kein anonymer Plan zum Abarbeiten. Es ist sinnvoll, wenn du Verantwortung übernehmen willst, aber nicht allein gelassen werden möchtest. Michelle hilft dir, den roten Faden zu behalten, Übungen sauber umzusetzen und den Plan anzupassen, wenn das Leben dazwischenkommt.</p></div></section>
+<section class="section alt"><div class="container split"><div><p class="eyebrow">Für wen?</p><h2>Für Menschen, die flexibel bleiben müssen — aber nicht planlos trainieren wollen.</h2><ul class="checklist"><li>unregelmäßige Arbeitszeiten oder Reisen</li><li>Training im eigenen Gym oder zuhause</li><li>Wunsch nach Feedback ohne ständige Vor-Ort-Termine</li><li>Wiedereinstieg mit klarer Struktur</li><li>Ergänzung zu gelegentlichen Personal-Training-Einheiten</li></ul></div><div class="card dark"><h3>Online heißt nicht unpersönlich.</h3><p>Der persönliche Blick bleibt entscheidend: Ausgangssituation, Ziel, Rückmeldungen, Fortschritt und Alltag bestimmen, wie das Coaching angepasst wird.</p></div></div></section>
+<section class="section"><div class="container"><p class="eyebrow">Ablauf</p><h2>Ein klarer Rahmen, der regelmäßig nachgeschärft wird.</h2><div class="steps"><div><span>01</span><h3>Einordnung</h3><p>Ziel, Erfahrung, verfügbare Zeit, Equipment und Hürden werden geklärt.</p></div><div><span>02</span><h3>Plan & Umsetzung</h3><p>Du bekommst einen Trainingsrahmen, der zu deinem Alltag passt und verständlich bleibt.</p></div><div><span>03</span><h3>Feedback & Anpassung</h3><p>Technik, Belastung und Fortschritt werden anhand deiner Rückmeldungen nachgeschärft.</p></div></div></div></section>
+<FAQ items={faq} />
+<Inquiry format="Online Coaching" />
 </BaseLayout>

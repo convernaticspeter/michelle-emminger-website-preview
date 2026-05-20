@@ -1,0 +1,34 @@
+---
+const {
+  title = 'Nächster Schritt',
+  heading = 'Schick Michelle kurz, wo du gerade stehst.',
+  copy = 'Ein paar Eckdaten reichen, damit Michelle einschätzen kann, ob Personal Training, Online Coaching oder ein Firmenfitness-Pilot sinnvoll ist.',
+  format = '1:1 Personal Training'
+} = Astro.props;
+const baseOptions = ['1:1 Personal Training', 'Online Coaching', 'Firmenfitness / Office Fitness', 'Noch unsicher'];
+const options = [format, ...baseOptions.filter((item) => item !== format)];
+---
+<section class="section alt" id="anfrage">
+  <div class="container split">
+    <div>
+      <p class="eyebrow">{title}</p>
+      <h2>{heading}</h2>
+      <p class="lead">{copy}</p>
+      <ul class="checklist">
+        <li>Ausgangssituation, Ziel und größte Hürde kurz beschreiben</li>
+        <li>Michelle meldet sich mit einer ehrlichen ersten Einschätzung</li>
+        <li>Kein Druck, kein Fitness-Theater, kein Standardpaket</li>
+      </ul>
+    </div>
+    <form class="card form" name="preview-anfrage" action="/danke/" method="get">
+      <input name="name" placeholder="Name" required />
+      <input name="kontakt" placeholder="E-Mail oder Telefon" required />
+      <select name="format">
+        {options.map((option, index) => <option selected={index === 0}>{option}</option>)}
+      </select>
+      <textarea name="nachricht" rows="4" placeholder="Ziel, größte Hürde, Ort/Bezirk oder Teamgröße"></textarea>
+      <button class="btn primary" type="submit">Einschätzung anfragen</button>
+      <p class="seo-note">Preview-Formular. Für Produktion später echte Zieladresse/Terminbuchung ergänzen.</p>
+    </form>
+  </div>
+</section>

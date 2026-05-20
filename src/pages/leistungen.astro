@@ -1,26 +1,10 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import Inquiry from '../components/Inquiry.astro';
 ---
-<BaseLayout title="Leistungen | Michelle Emminger Personal Training Wien" description="Alle Leistungen von Michelle Emminger: Personal Training, Online Coaching, Rückentraining, Muskelaufbau und Firmenfitness in Wien." canonical="/leistungen/">
+<BaseLayout title="Leistungen | Michelle Emminger Personal Training Wien" description="Alle Leistungen von Michelle Emminger: Personal Training, Online Coaching, Rückentraining, Muskelaufbau und Firmenfitness in Wien nach der 4-ME Method." canonical="/leistungen/" serviceName="Personal Training, Online Coaching und Firmenfitness">
 <section class="service-hero"><div class="container"><p class="breadcrumbs"><a href="/">Start</a> / Leistungen</p><p class="eyebrow">Leistungen</p><h1 class="page-title">Wähle den Einstieg, der zu deinem Leben passt.</h1><p class="lead">Alle Angebote arbeiten mit derselben Grundlage: Michelles 4-ME Method — Körper, Kopf, Alltag und Erfolg zusammen denken.</p></div></section>
-<section class="section"><div class="container"><div class="grid three"><div class="card"><h3>Personal Training Wien</h3><p>Persönliche 1:1 Betreuung für Kraft, Haltung, Technik und Routine.</p><a class="btn light" href="/personal-training-wien/">Ansehen</a></div><div class="card"><h3>Online Coaching</h3><p>Flexible Begleitung mit Trainingsstruktur und Feedback.</p><a class="btn light" href="/online-coaching/">Ansehen</a></div><div class="card"><h3>Firmenfitness</h3><p>Office Fitness für Teams in Wien: niedrigschwellig und pilotierbar.</p><a class="btn light" href="/firmenfitness/">Ansehen</a></div><div class="card"><h3>Rückenschmerzen</h3><p>Training für Rücken, Haltung, Core und Beweglichkeit.</p><a class="btn light" href="/rueckenschmerzen/">Ansehen</a></div><div class="card"><h3>Muskelaufbau</h3><p>Saubere Progression und Krafttraining ohne Ego.</p><a class="btn light" href="/muskelaufbau/">Ansehen</a></div><div class="card dark"><h3>Unsicher?</h3><p>Im Erstgespräch klären wir, welcher Einstieg sinnvoll ist.</p><a class="btn mint" href="/kontakt/">Kontakt</a></div></div></div></section>
-
-<section class="section alt" id="anfrage">
-  <div class="container split">
-    <div>
-      <p class="eyebrow">Nächster Schritt</p>
-      <h2>Kurz klären, ob es passt.</h2>
-      <p class="lead">Schick Michelle kurz Ziel, Ausgangssituation und gewünschtes Format. In der Preview wird noch nichts produktiv versendet.</p>
-      <ul class="checklist"><li>15–20 Minuten Kennenlernen</li><li>Training, Online Coaching oder B2B-Pilot einordnen</li><li>Keine Verpflichtung, kein Druck</li></ul>
-    </div>
-    <form class="card form" name="preview-anfrage" action="/danke/" method="get">
-      <input name="name" placeholder="Name" required />
-      <input name="kontakt" placeholder="E-Mail oder Telefon" required />
-      <select name="format"><option>1:1 Personal Training</option><option>Online Coaching</option><option>Firmenfitness / Office Fitness</option><option>Noch unsicher</option></select>
-      <textarea name="nachricht" rows="4" placeholder="Ziel, größte Hürde, Ort/Bezirk oder Teamgröße"></textarea>
-      <button class="btn primary" type="submit">Anfrage vormerken</button>
-      <p class="seo-note">Preview-Formular. Für Produktion später echte Zieladresse/Terminbuchung ergänzen.</p>
-    </form>
-  </div>
-</section>
+<section class="section"><div class="container narrow"><p class="eyebrow">Orientierung</p><h2>Nicht jedes Ziel braucht dasselbe Format.</h2><p class="answer-block">Michelle Emminger bietet Personal Training in Wien, Online Coaching und Firmenfitness an. Entscheidend ist nicht, welches Angebot am größten klingt, sondern welcher Einstieg zu Ausgangssituation, Alltag, Ziel und gewünschter Begleitung passt.</p><p>Die Leistungen sind bewusst klar gehalten. Wer technische Korrektur und persönliche Führung braucht, ist im 1:1 gut aufgehoben. Wer flexibel trainieren muss, kann online oder hybrid arbeiten. Unternehmen starten sinnvollerweise mit einer Testsession oder einem Pilot.</p></div></section>
+<section class="section alt"><div class="container"><div class="grid three"><div class="card"><h3>Personal Training Wien</h3><p>Persönliche 1:1 Betreuung für Kraft, Haltung, Technik, Rücken und Routine. Besonders sinnvoll für Wiedereinstieg, Unsicherheit und klare Begleitung.</p><a class="btn light" href="/personal-training-wien/">Personal Training ansehen</a></div><div class="card"><h3>Online Coaching</h3><p>Flexible Begleitung mit Trainingsstruktur, Feedback und Anpassung, wenn dein Alltag nicht in fixe Vor-Ort-Termine passt.</p><a class="btn light" href="/online-coaching/">Online Coaching ansehen</a></div><div class="card"><h3>Firmenfitness Wien</h3><p>Office Fitness für Teams: niedrigschwellige Einheiten für Rücken, Nacken, Mobilität und Energie direkt im Unternehmen.</p><a class="btn light" href="/firmenfitness/">Firmenfitness ansehen</a></div><div class="card"><h3>Rückenschmerzen</h3><p>Training für Rücken, Haltung, Core und Beweglichkeit — mit sauberer Belastungssteuerung und Blick auf den Alltag.</p><a class="btn light" href="/rueckenschmerzen/">Rückenfokus ansehen</a></div><div class="card"><h3>Muskelaufbau</h3><p>Saubere Progression und Krafttraining ohne Ego: stärker werden, Technik verstehen und Belastbarkeit aufbauen.</p><a class="btn light" href="/muskelaufbau/">Muskelaufbau ansehen</a></div><div class="card dark"><h3>Unsicher?</h3><p>Wenn du noch nicht weißt, welches Format passt, ist genau das der richtige Startpunkt. Erst einordnen, dann entscheiden.</p><a class="btn mint" href="/kontakt/">Einschätzung anfragen</a></div></div></div></section>
+<Inquiry format="Noch unsicher" />
 </BaseLayout>

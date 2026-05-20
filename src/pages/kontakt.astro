@@ -1,25 +1,9 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import Inquiry from '../components/Inquiry.astro';
 ---
-<BaseLayout title="Kontakt | Michelle Emminger Personal Training Wien" description="Kontakt zu Michelle Emminger: Erstgespräch für Personal Training, Online Coaching oder Firmenfitness in Wien anfragen." canonical="/kontakt/">
-<section class="service-hero"><div class="container split"><div><p class="breadcrumbs"><a href="/">Start</a> / Kontakt</p><p class="eyebrow">Kontakt</p><h1 class="page-title">Lass uns kurz klären, welcher Weg zu dir passt.</h1><p class="lead">Erzähl kurz, wo du gerade stehst und was du verändern möchtest. Michelle meldet sich mit einem realistischen nächsten Schritt.</p></div><div class="card dark"><h3>Gute Anfrage enthält:</h3><ul class="checklist"><li>Ziel oder größte Hürde</li><li>1:1, online/hybrid oder Firmenfitness</li><li>Ort/Bezirk oder Teamgröße</li><li>relevante Beschwerden oder Einschränkungen</li></ul></div></div></section>
-
-<section class="section alt" id="anfrage">
-  <div class="container split">
-    <div>
-      <p class="eyebrow">Nächster Schritt</p>
-      <h2>Kurz klären, ob es passt.</h2>
-      <p class="lead">Schick Michelle kurz Ziel, Ausgangssituation und gewünschtes Format. In der Preview wird noch nichts produktiv versendet.</p>
-      <ul class="checklist"><li>15–20 Minuten Kennenlernen</li><li>Training, Online Coaching oder B2B-Pilot einordnen</li><li>Keine Verpflichtung, kein Druck</li></ul>
-    </div>
-    <form class="card form" name="preview-anfrage" action="/danke/" method="get">
-      <input name="name" placeholder="Name" required />
-      <input name="kontakt" placeholder="E-Mail oder Telefon" required />
-      <select name="format"><option>1:1 Personal Training</option><option>Online Coaching</option><option>Firmenfitness / Office Fitness</option><option>Noch unsicher</option></select>
-      <textarea name="nachricht" rows="4" placeholder="Ziel, größte Hürde, Ort/Bezirk oder Teamgröße"></textarea>
-      <button class="btn primary" type="submit">Anfrage vormerken</button>
-      <p class="seo-note">Preview-Formular. Für Produktion später echte Zieladresse/Terminbuchung ergänzen.</p>
-    </form>
-  </div>
-</section>
+<BaseLayout title="Kontakt | Michelle Emminger Personal Training Wien" description="Kontakt zu Michelle Emminger: Personal Training Wien, Online Coaching oder Firmenfitness einschätzen lassen." canonical="/kontakt/">
+<section class="service-hero"><div class="container split"><div><p class="breadcrumbs"><a href="/">Start</a> / Kontakt</p><p class="eyebrow">Kontakt</p><h1 class="page-title">Lass kurz einordnen, welcher nächste Schritt sinnvoll ist.</h1><p class="lead">Beschreib Ziel, Ausgangssituation und gewünschtes Format. Michelle meldet sich mit einer ehrlichen Einschätzung — nicht mit einem Standardpaket.</p></div><div class="card dark"><h3>Wofür du anfragen kannst</h3><ul class="checklist"><li>1:1 Personal Training in Wien</li><li>Online oder Hybrid Coaching</li><li>Rücken, Haltung, Muskelaufbau oder Wiedereinstieg</li><li>Firmenfitness, Office Fitness oder B2B-Pilot</li></ul></div></div></section>
+<section class="section"><div class="container narrow"><p class="eyebrow">Gute Anfrage</p><h2>Je klarer die Ausgangslage, desto besser die Einschätzung.</h2><p class="answer-block">Für eine sinnvolle erste Einschätzung reichen wenige Informationen: Was möchtest du verändern, wo stehst du gerade, was hat bisher nicht funktioniert und welches Format interessiert dich? Daraus lässt sich klären, ob Personal Training, Online Coaching oder Firmenfitness der passende Einstieg ist.</p><p>Bitte keine Sorge, wenn noch nicht alles klar ist. Genau dafür ist die Anfrage da. Michelle sortiert mit dir, welcher nächste Schritt realistisch ist und ob ihre Arbeitsweise zu deinem Ziel passt.</p></div></section>
+<Inquiry title="Anfrage" heading="Schick Michelle kurz deine Eckdaten." copy="Name, Kontakt, gewünschtes Format und ein paar Sätze zur Ausgangssituation reichen für den ersten Schritt." format="Noch unsicher" />
 </BaseLayout>
