@@ -7,7 +7,13 @@ const {
   image = '/assets/hero-training.webp',
   pageType = 'WebPage',
   faq = [],
-  serviceName = ''
+  serviceName = '',
+  extraSchema = [],
+  navCtaText = 'Einschätzung anfragen',
+  navCtaHref = '/kontakt/',
+  stickyCtaText = navCtaText,
+  stickyCtaHref = navCtaHref,
+  showStickyCta = true
 } = Astro.props;
 const site = Astro.site || 'https://michelle.preview.convernatics.eu';
 const url = new URL(canonical, site).toString();
@@ -95,7 +101,7 @@ if (faq.length) {
     }))
   });
 }
-const schema = { '@context': 'https://schema.org', '@graph': graph };
+const schema = { '@context': 'https://schema.org', '@graph': [...graph, ...extraSchema] };
 ---
 <html lang="de-AT">
 <head>
@@ -117,22 +123,22 @@ const schema = { '@context': 'https://schema.org', '@graph': graph };
 <body>
   <header class="site-header">
     <div class="container nav">
-      <a href="/" aria-label="Michelle Emminger Startseite"><img class="logo" src="/assets/logo.png" alt="Michelle Emminger Logo" /></a>
+      <a href="/" aria-label="Michelle Emminger Startseite"><img class="logo" src="/assets/logo.png" alt="Michelle Emminger Logo" width="1024" height="1024" /></a>
       <nav class="menu" aria-label="Hauptnavigation">
         <a href="/personal-training-wien/">Personal Training</a>
         <a href="/firmenfitness/">Firmenfitness</a>
         <a href="/4-me-method/">4-ME Method</a>
         <a href="/ueber-mich/">Über Michelle</a>
         <a href="/media-center/">Media</a>
-        <a class="nav-cta" href="/kontakt/">Einschätzung anfragen</a>
+        <a class="nav-cta" href={navCtaHref}>{navCtaText}</a>
       </nav>
     </div>
   </header>
   <main><slot /></main>
-  <a class="sticky-cta" href="/kontakt/">Einschätzung anfragen</a>
+  {showStickyCta && <a class="sticky-cta" href={stickyCtaHref}>{stickyCtaText}</a>}
   <footer class="footer">
     <div class="container footer-grid">
-      <div><img class="logo" src="/assets/logo-white.png" alt="Michelle Emminger Logo weiß" /><p>From Struggle to Strength: Personal Training, Online Coaching und Office Fitness in Wien. Klar, persönlich und alltagstauglich.</p></div>
+      <div><img class="logo" src="/assets/logo-white.png" alt="Michelle Emminger Logo weiß" width="1024" height="1024" /><p>From Struggle to Strength: Personal Training, Online Coaching und Office Fitness in Wien. Klar, persönlich und alltagstauglich.</p></div>
       <div><strong>Leistungen</strong><p><a href="/personal-training-wien/">Personal Training Wien</a><br/><a href="/rueckenschmerzen/">Rückentraining Wien</a><br/><a href="/muskelaufbau/">Muskelaufbau Personal Training</a><br/><a href="/online-coaching/">Online Coaching</a><br/><a href="/firmenfitness/">Firmenfitness Wien</a></p></div>
       <div><strong>Michelle</strong><p><a href="/4-me-method/">4-ME Method</a><br/><a href="/ueber-mich/">Über Michelle</a><br/><a href="/leistungen/">Leistungen</a><br/><a href="/kontakt/">Kontakt</a><br/><a href="/media-center/">Media Center</a></p></div>
       <div><strong>Rechtliches</strong><p><a href="/impressum/">Impressum</a><br/><a href="/datenschutz/">Datenschutz</a></p></div>

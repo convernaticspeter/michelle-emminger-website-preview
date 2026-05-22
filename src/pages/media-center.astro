@@ -2,16 +2,27 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import FAQ from '../components/FAQ.astro';
 
+const mediaEmail = 'martina.zowack@zowack.com';
+const mediaMailto = `mailto:${mediaEmail}?subject=Medienanfrage%20Michelle%20Emminger`;
+
 const facts = [
   ['Name', 'Michelle Emminger'],
   ['Standort', 'Wien'],
   ['Tätigkeit', 'Personal-, Gesundheits- und Functional Trainerin, Personal Coach und Fitnessbetreuerin'],
   ['Erfahrung', 'über 1000 Stunden Coaching-Erfahrung'],
   ['Methode', '4-ME Method: My Body, My Mind, My Life, My Success'],
-  ['Positionierung', 'From Struggle to Strength · Become your best ME']
+  ['Positionierung', 'From Struggle to Strength · Become your best ME'],
+  ['Buch', 'Das einfachste Trainingsbuch der Welt']
 ];
 
 const downloads = [
+  {
+    title: 'Komplettes Pressekit',
+    copy: 'Alle PDFs, Logos, ausgewählte Pressebilder und Nutzungshinweise in einem ZIP-Paket.',
+    href: '/media/michelle-emminger-pressekit.zip',
+    meta: 'ZIP · Media Kit',
+    featured: true
+  },
   {
     title: 'Basis-Presseinfo',
     copy: 'Presseinformation zu Michelles 4-ME Method, ihrer persönlichen Transformation und ihrem modernen Coaching-Ansatz.',
@@ -52,32 +63,40 @@ const downloads = [
 
 const photos = [
   {
-    src: '/media/media-michelle-portrait.webp',
+    src: '/media/media-michelle-portrait-card.webp',
     href: '/media/media-michelle-portrait.webp',
     alt: 'Michelle Emminger im Coaching-Gespräch',
     title: 'Coaching & Gespräch',
-    copy: 'Für Artikel, Interview-Ankündigungen und Kooperationsseiten.'
+    copy: 'Für Artikel, Interview-Ankündigungen und Kooperationsseiten.',
+    width: 760,
+    height: 507
   },
   {
-    src: '/media/media-michelle-training.webp',
+    src: '/media/media-michelle-training-card.webp',
     href: '/media/media-michelle-training.webp',
     alt: 'Michelle Emminger begleitet eine Kundin beim Training',
     title: 'Personal Training',
-    copy: 'Für Beiträge rund um 1:1 Training, Technik und persönliche Begleitung.'
+    copy: 'Für Beiträge rund um 1:1 Training, Technik und persönliche Begleitung.',
+    width: 760,
+    height: 507
   },
   {
-    src: '/media/media-michelle-coaching.webp',
+    src: '/media/media-michelle-coaching-card.webp',
     href: '/media/media-michelle-coaching.webp',
     alt: 'Michelle Emminger korrigiert eine Übung',
     title: '4-ME Method',
-    copy: 'Für Methodik, Bewegungsausführung und alltagstaugliches Training.'
+    copy: 'Für Methodik, Bewegungsausführung und alltagstaugliches Training.',
+    width: 760,
+    height: 507
   },
   {
-    src: '/media/media-michelle-strength.webp',
+    src: '/media/media-michelle-strength-card.webp',
     href: '/media/media-michelle-strength.webp',
     alt: 'Michelle Emminger zeigt Krafttraining',
     title: 'Kraft & Technik',
-    copy: 'Für Themen zu Muskelaufbau, Functional Training und Gesundheitstraining.'
+    copy: 'Für Themen zu Muskelaufbau, Functional Training und Gesundheitstraining.',
+    width: 760,
+    height: 507
   }
 ];
 
@@ -92,31 +111,99 @@ const topics = [
   'Warum Fitnesspläne angepasst werden müssen, statt jahrelang gleich zu bleiben'
 ];
 
+const bios = [
+  {
+    label: 'Kurzbio · 50 Wörter',
+    text: 'Michelle Emminger ist Personal-, Gesundheits- und Functional Trainerin in Wien. Mit ihrer 4-ME Method verbindet sie körperliches Training, mentale Stärke, Alltag und Fortschritt. Ihre eigene Transformation prägt ihren klaren, empathischen Ansatz: Training ohne Fitness-Theater, aber mit Struktur, Technik und echter Begleitung.'
+  },
+  {
+    label: 'Profil · 100 Wörter',
+    text: 'Michelle Emminger begleitet Menschen in Wien und online als Personal-, Gesundheits- und Functional Trainerin. Ihre Arbeit basiert auf eigener Erfahrung: gesundheitliche Rückschläge, über 20 kg Gewichtszunahme, Rückenschmerzen, Selbstzweifel — und der Weg zurück zu Kraft, Körpergefühl und mentaler Stärke. Aus diesem Weg entstand ihre 4-ME Method: My Body, My Mind, My Life, My Success. Michelle trainiert nicht „Körper“, sondern Menschen, die echte Veränderung suchen und keinen Fitness-Show-Zugang brauchen. Ihr Ansatz verbindet saubere Technik, klare Struktur, mentale Stärke und alltagstaugliche Routinen.'
+  }
+];
+
+const quotes = [
+  'Ich trainiere nicht Körper, sondern Menschen, die wie ich vor echten Herausforderungen stehen und diese überwinden wollen.',
+  'Veränderung passiert besser ohne Druck — aber mit dem richtigen Mindset, einem klaren System und jemandem, der weiß, wie sich der eigene Kampf anfühlt.',
+  'Ich will das ME in meinen Kunden wecken: das Bewusstsein, dass sie sich Zeit für sich selbst nehmen dürfen, wenn sie zu ihrem besten Ich werden wollen.'
+];
+
 const faq = [
   { q: 'Darf Bildmaterial direkt verwendet werden?', a: 'Das bereitgestellte Bildmaterial ist für redaktionelle Berichterstattung, Kooperationen und Ankündigungen gedacht. Bitte den konkreten Verwendungszweck prüfen und als Bildcredit Michelle Emminger angeben, sofern kein anderer Credit genannt wird.' },
   { q: 'Wer ist Ansprechpartnerin für Medien?', a: 'Für Medienanfragen ist Dr. Martina Zowack, Zowack PR & Communications, erreichbar: +43 676 3047112 oder martina.zowack@zowack.com.' },
   { q: 'Welche Themen eignen sich für Interviews?', a: 'Geeignet sind vor allem Michelles persönliche Transformation, die 4-ME Method, alltagstaugliches Training, Rückengesundheit, Office Fitness, mentale Stärke und Training für Menschen, die keinen Fitness-Show-Zugang suchen.' },
   { q: 'Gibt es ein Buch von Michelle Emminger?', a: 'Ja. Michelle Emminger ist Autorin von „Das einfachste Trainingsbuch der Welt“. Das Buch verbindet ihre persönliche Abnehmreise mit einfachen Übungen, Ernährungsimpulsen und Motivation für den Einstieg.' }
 ];
+
+const site = Astro.site || 'https://michelle.preview.convernatics.eu';
+const mediaBase = new URL('/media-center/', site).toString();
+const imageObjects = photos.map((photo) => ({
+  '@type': 'ImageObject',
+  name: `Michelle Emminger — ${photo.title}`,
+  contentUrl: new URL(photo.href, site).toString(),
+  thumbnailUrl: new URL(photo.src, site).toString(),
+  caption: photo.copy,
+  creditText: 'Michelle Emminger',
+  creator: { '@type': 'Person', name: 'Michelle Emminger' },
+  acquireLicensePage: mediaBase
+}));
+const extraSchema = [
+  ...imageObjects,
+  {
+    '@type': 'Book',
+    '@id': `${mediaBase}#trainingsbuch`,
+    name: 'Das einfachste Trainingsbuch der Welt',
+    author: { '@type': 'Person', name: 'Michelle Emminger' },
+    image: new URL('/media/trainingsbuch-cover.webp', site).toString(),
+    inLanguage: 'de-AT'
+  },
+  {
+    '@type': 'ContactPoint',
+    '@id': `${mediaBase}#medienkontakt`,
+    contactType: 'media relations',
+    name: 'Dr. Martina Zowack',
+    email: mediaEmail,
+    telephone: '+43 676 3047112',
+    availableLanguage: ['de', 'en']
+  }
+];
 ---
-<BaseLayout title="Media Center | Michelle Emminger Presse, Logos & Bildmaterial" description="Media Center von Michelle Emminger: Presseinformationen, Kurzprofil, Themen, Logos und Bildmaterial für Medien, Kooperationen und B2B-Partner." canonical="/media-center/" image="/media/media-michelle-portrait.webp" pageType="CollectionPage" faq={faq}>
+<BaseLayout
+  title="Pressekit Michelle Emminger | Logos & Bildmaterial"
+  description="Pressekit von Michelle Emminger: Kurzprofil, Presseinfo, Logos, Bildmaterial, O-Töne und Interviewthemen zur 4-ME Method."
+  canonical="/media-center/"
+  image="/media/media-michelle-portrait-hero.webp"
+  pageType="CollectionPage"
+  faq={faq}
+  extraSchema={extraSchema}
+  navCtaText="Medienanfrage senden"
+  navCtaHref={mediaMailto}
+  stickyCtaText="Medienanfrage senden"
+  stickyCtaHref={mediaMailto}
+  showStickyCta={false}
+>
   <section class="service-hero media-hero">
     <div class="container split">
       <div>
         <p class="breadcrumbs"><a href="/">Start</a> / Media Center</p>
-        <p class="eyebrow">Presse · Kooperationen · Bildmaterial</p>
-        <h1 class="page-title">Alles, was Medien und Partner über Michelle brauchen.</h1>
-        <p class="lead">Kurzprofil, Presseinformation, Themenvorschläge, Logos und ausgewähltes Bildmaterial zu Michelle Emminger, ihrer 4-ME Method und ihrem Weg von „From Struggle to Strength“.</p>
+        <p class="eyebrow">Pressekit · Logos · Bildmaterial</p>
+        <h1 class="page-title">Pressekit für Michelle Emminger und die 4-ME Method.</h1>
+        <p class="lead">Kurzprofil, Presseinformation, Themenvorschläge, O-Töne, Logos und ausgewähltes Bildmaterial für Medien, Interviews, Bühnenformate und Kooperationen.</p>
+        <div class="media-fact-strip" aria-label="Kurzüberblick">
+          <span>Trainerin & Coach in Wien</span>
+          <span>4-ME Method</span>
+          <span>Autorin & Interviewgast</span>
+        </div>
         <div class="hero-actions">
-          <a class="btn primary" href="#downloads">Downloads ansehen</a>
+          <a class="btn primary" href="/media/michelle-emminger-pressekit.zip" download>Pressekit herunterladen</a>
           <a class="btn light" href="#bildmaterial">Bildmaterial ansehen</a>
         </div>
       </div>
-      <div class="image-card"><img src="/media/media-michelle-portrait.webp" alt="Michelle Emminger im Gespräch mit einer Kundin" loading="eager" fetchpriority="high" /></div>
+      <div class="image-card"><img src="/media/media-michelle-portrait-hero.webp" alt="Michelle Emminger im Gespräch mit einer Kundin" width="1280" height="853" loading="eager" decoding="async" fetchpriority="high" /></div>
     </div>
   </section>
 
-  <section class="section">
+  <section class="section media-kit-panel">
     <div class="container split media-intro">
       <div>
         <p class="eyebrow">Kurzprofil</p>
@@ -124,7 +211,7 @@ const faq = [
         <p class="answer-block">Michelle Emminger ist Personal-, Gesundheits- und Functional Trainerin in Wien. Ihre Arbeit verbindet fundiertes Fitness- und Gesundheitswissen mit einer selbst erlebten Transformation: gesundheitliche Rückschläge, über 20 kg Gewichtszunahme, Rückenschmerzen, Selbstzweifel — und der Weg zurück zu Kraft, Körpergefühl und mentaler Stärke.</p>
         <p>Aus dieser Erfahrung entstand ihre 4-ME Method: My Body, My Mind, My Life, My Success. Michelle trainiert nicht „Körper“, sondern Menschen, die echte Herausforderungen überwinden wollen. Ihr Ansatz ist individuell, alltagstauglich und klar geführt — ohne unrealistische Fitness- und Schönheitsideale.</p>
       </div>
-      <div class="fact-card">
+      <div class="fact-card press-file-card">
         <h3>Factsheet</h3>
         <dl>
           {facts.map(([label, value]) => <><dt>{label}</dt><dd>{value}</dd></>)}
@@ -133,13 +220,34 @@ const faq = [
     </div>
   </section>
 
-  <section id="downloads" class="section alt">
+  <section class="section alt bio-section">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow">Direkt verwendbar</p>
+          <h2>Kurztexte für Ankündigungen und Redaktionen.</h2>
+        </div>
+        <p>Die Texte können als Einstieg für Artikel, Speaker-Vorstellungen, Eventseiten oder Kooperationsankündigungen verwendet werden.</p>
+      </div>
+      <div class="bio-grid">
+        {bios.map((bio) => (
+          <article class="copy-card">
+            <span>{bio.label}</span>
+            <p>{bio.text}</p>
+            <button type="button" class="copy-button" data-copy={bio.text}>Text kopieren</button>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section id="downloads" class="section alt downloads-section">
     <div class="container">
       <p class="eyebrow">Downloads</p>
-      <h2>Presseinfo, Kurzprofil und Logos.</h2>
+      <h2>Pressekit, Presseinfo, Kurzprofil und Logos.</h2>
       <div class="download-grid">
         {downloads.map((item) => (
-          <a class="download-card" href={item.href} download>
+          <a class:list={["download-card", item.featured && "featured"]} href={item.href} download>
             <span>{item.meta}</span>
             <h3>{item.title}</h3>
             <p>{item.copy}</p>
@@ -159,15 +267,18 @@ const faq = [
         </div>
         <p>Die Bilder zeigen Michelle im Coaching- und Trainingskontext. Für redaktionelle Nutzung bitte den Bildcredit <strong>Michelle Emminger</strong> nennen.</p>
       </div>
+      <div class="usage-note">
+        <strong>Nutzungshinweis:</strong> Frei für redaktionelle Berichterstattung, Interview-Ankündigungen und Kooperationskommunikation mit Credit. Bezahlte Werbung, starke Bearbeitung oder Sonderformate bitte vorab freigeben lassen.
+      </div>
       <div class="media-photo-grid">
         {photos.map((photo) => (
           <a class="media-photo" href={photo.href} download>
-            <img src={photo.src} alt={photo.alt} loading="eager" decoding="async" />
+            <img src={photo.src} alt={photo.alt} width={photo.width} height={photo.height} loading="eager" decoding="async" />
             <div>
               <h3>{photo.title}</h3>
               <p>{photo.copy}</p>
               <small>Bildcredit: Michelle Emminger</small>
-              <span>WebP herunterladen</span>
+              <span>Original-WebP herunterladen</span>
             </div>
           </a>
         ))}
@@ -176,9 +287,9 @@ const faq = [
   </section>
 
   <section class="section alt">
-    <div class="container split">
+    <div class="container split book-section">
       <div class="book-card">
-        <img src="/media/trainingsbuch-cover.webp" alt="Cover Das einfachste Trainingsbuch der Welt von Michelle Emminger" loading="eager" decoding="async" />
+        <img src="/media/trainingsbuch-cover-card.webp" alt="Cover Das einfachste Trainingsbuch der Welt von Michelle Emminger" width="760" height="530" loading="eager" decoding="async" />
       </div>
       <div>
         <p class="eyebrow">Buch & Hintergrund</p>
@@ -207,11 +318,15 @@ const faq = [
       <div>
         <p class="eyebrow">Zitate</p>
         <h2>Direkt verwendbare O-Töne.</h2>
+        <p>Die O-Töne können als Einstieg für Artikel, Interviewteaser oder Eventankündigungen verwendet werden.</p>
       </div>
       <div class="quote-stack">
-        <blockquote>„Ich trainiere nicht Körper, sondern Menschen, die wie ich vor echten Herausforderungen stehen und diese überwinden wollen.“</blockquote>
-        <blockquote>„Veränderung passiert besser ohne Druck — aber mit dem richtigen Mindset, einem klaren System und jemandem, der weiß, wie sich der eigene Kampf anfühlt.“</blockquote>
-        <blockquote>„Ich will das ME in meinen Kunden wecken: das Bewusstsein, dass sie sich Zeit für sich selbst nehmen dürfen, wenn sie zu ihrem besten Ich werden wollen.“</blockquote>
+        {quotes.map((quote) => (
+          <blockquote>
+            „{quote}”
+            <button type="button" class="copy-button quote-copy" data-copy={`„${quote}”`}>Zitat kopieren</button>
+          </blockquote>
+        ))}
       </div>
     </div>
   </section>
@@ -226,11 +341,27 @@ const faq = [
       <div class="contact-card">
         <h3>Dr. Martina Zowack</h3>
         <p>Zowack PR & Communications</p>
-        <p><a href="tel:+436763047112">+43 676 3047112</a><br /><a href="mailto:martina.zowack@zowack.com">martina.zowack@zowack.com</a></p>
-        <a class="btn primary" href="mailto:martina.zowack@zowack.com?subject=Medienanfrage%20Michelle%20Emminger">Medienanfrage senden</a>
+        <p><a href="tel:+436763047112">+43 676 3047112</a><br /><a href={`mailto:${mediaEmail}`}>{mediaEmail}</a></p>
+        <a class="btn primary" href={mediaMailto}>Medienanfrage senden</a>
       </div>
     </div>
   </section>
 
   <FAQ items={faq} />
+
+  <script>
+    document.querySelectorAll('[data-copy]').forEach((button) => {
+      button.addEventListener('click', async () => {
+        const value = button.getAttribute('data-copy') || '';
+        try {
+          await navigator.clipboard.writeText(value);
+          const old = button.textContent;
+          button.textContent = 'Kopiert';
+          setTimeout(() => { button.textContent = old; }, 1600);
+        } catch (error) {
+          button.textContent = 'Kopieren nicht möglich';
+        }
+      });
+    });
+  </script>
 </BaseLayout>
