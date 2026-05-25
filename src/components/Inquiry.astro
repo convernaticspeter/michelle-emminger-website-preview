@@ -1,8 +1,8 @@
 ---
 const {
   title = 'Nächster Schritt',
-  heading = 'Schick Michelle kurz, wo du gerade stehst.',
-  copy = 'Ein paar Eckdaten reichen, damit Michelle einschätzen kann, ob Personal Training, Online Coaching oder ein Firmenfitness-Pilot sinnvoll ist.',
+  heading = 'Schick Michelle kurz, worum es bei dir konkret geht.',
+  copy = 'Ein paar Eckdaten reichen, damit Michelle einschätzen kann, ob Personal Training, Online Coaching oder ein Firmenfitness-Pilot gut passt.',
   format = '1:1 Personal Training'
 } = Astro.props;
 const baseOptions = ['1:1 Personal Training', 'Online Coaching', 'Firmenfitness / Office Fitness', 'Noch unsicher'];
@@ -17,7 +17,7 @@ const options = [format, ...baseOptions.filter((item) => item !== format)];
       <ul class="checklist">
         <li>Ausgangssituation, Ziel und größte Hürde kurz beschreiben</li>
         <li>Michelle meldet sich mit einer ehrlichen ersten Einschätzung</li>
-        <li>Kein Druck, kein Fitness-Theater, kein Standardpaket</li>
+        <li>Kein Druck, keine Show, kein Standardpaket</li>
       </ul>
     </div>
     <form class="card form" name="preview-anfrage" action="/danke/" method="get">
