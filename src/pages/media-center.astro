@@ -36,28 +36,11 @@ const downloads = [
     meta: 'PDF · Profiltext'
   },
   {
-    title: 'Logo farbig',
-    copy: 'Querformat-Logo in Farbe, ohne Claim. Für helle Hintergründe und Standard-Anwendungen.',
-    href: '/media/michelle-logo-farbe.png',
-    meta: 'PNG · 2048 px'
-  },
-  {
-    title: 'Logo weiß',
-    copy: 'Querformat-Logo in Weiß, ohne Claim. Für dunkle Flächen, Bilder und Bühnen-/Eventgrafiken.',
-    href: '/media/michelle-logo-weiss.png',
-    meta: 'PNG · 2048 px'
-  },
-  {
-    title: 'Logo farbig mit Claim',
-    copy: 'Querformat-Logo in Farbe mit Claim. Für helle Hintergründe, wenn der Claim mitgeführt werden soll.',
-    href: '/media/michelle-logo-farbe-mit-claim.png',
-    meta: 'PNG · 2048 px'
-  },
-  {
-    title: 'Logo weiß mit Claim',
-    copy: 'Querformat-Logo in Weiß mit Claim. Für dunkle Flächen, Bilder und Bühnen-/Eventgrafiken.',
-    href: '/media/michelle-logo-weiss-mit-claim.png',
-    meta: 'PNG · 2048 px'
+    title: 'Logo-Paket',
+    copy: 'Logo-Dateien in Farbe und Weiß. Nur bei Bedarf für Layout, Veranstaltergrafik oder Kooperationsmaterial.',
+    href: '/media/michelle-emminger-pressekit.zip',
+    meta: 'Optional · Logos im Pressekit',
+    compact: true
   }
 ];
 
@@ -97,6 +80,42 @@ const photos = [
     copy: 'Für Themen zu Muskelaufbau, Functional Training und Gesundheitstraining.',
     width: 760,
     height: 507
+  },
+  {
+    src: '/assets/about.webp',
+    href: '/assets/about.webp',
+    alt: 'Michelle Emminger Portrait',
+    title: 'Portrait',
+    copy: 'Für Personenportraits, Interviewprofile und Speaker-Vorstellungen.',
+    width: 1200,
+    height: 900
+  },
+  {
+    src: '/assets/hero-training.webp',
+    href: '/assets/hero-training.webp',
+    alt: 'Michelle Emminger beim Training',
+    title: 'Training Hero',
+    copy: 'Für Aufmacher zu Personal Training, Kraftaufbau und Wiedereinstieg.',
+    width: 1200,
+    height: 900
+  },
+  {
+    src: '/assets/personal-training.webp',
+    href: '/assets/personal-training.webp',
+    alt: 'Michelle Emminger im Personal Training',
+    title: '1:1 Personal Training',
+    copy: 'Für redaktionelle Beiträge zu Technik, Betreuung und Trainingsaufbau.',
+    width: 1200,
+    height: 900
+  },
+  {
+    src: '/assets/contact.webp',
+    href: '/assets/contact.webp',
+    alt: 'Michelle Emminger Kontaktmotiv',
+    title: 'Kontaktmotiv',
+    copy: 'Für Kontaktboxen, Interviewankündigungen und redaktionelle Kurzprofile.',
+    width: 1200,
+    height: 900
   }
 ];
 
@@ -169,8 +188,8 @@ const extraSchema = [
 ];
 ---
 <BaseLayout
-  title="Pressekit Michelle Emminger | Logos & Bildmaterial"
-  description="Pressekit von Michelle Emminger: Kurzprofil, Presseinfo, Logos, Bildmaterial, O-Töne und Interviewthemen zur 4-ME Method."
+  title="Pressefotos Michelle Emminger | Kurzprofil & Medienkontakt"
+  description="Pressebereich von Michelle Emminger: Pressefotos, Kurzprofil, Factsheet, Presseinfo, O-Töne und Medienkontakt zur 4-ME Method."
   canonical="/media-center/"
   image="/media/media-michelle-portrait-hero.webp"
   pageType="CollectionPage"
@@ -186,17 +205,17 @@ const extraSchema = [
     <div class="container split">
       <div>
         <p class="breadcrumbs"><a href="/">Start</a> / Media Center</p>
-        <p class="eyebrow">Pressekit · Logos · Bildmaterial</p>
-        <h1 class="page-title">Pressekit Michelle Emminger</h1>
-        <p class="lead">Kurzprofil, Presseinformation, O-Töne, Logos und ausgewähltes Bildmaterial für Medien, Interviews, Bühnenformate und Kooperationen.</p>
+        <p class="eyebrow">Pressefotos · Kurzprofil · Medienkontakt</p>
+        <h1 class="page-title">Pressebereich Michelle Emminger</h1>
+        <p class="lead">Pressefotos, Kurzprofil, Factsheet, O-Töne und Medienkontakt für Artikel, Interviews, Bühnenformate und Kooperationen.</p>
         <div class="media-fact-strip" aria-label="Kurzüberblick">
           <span>Trainerin & Coach in Wien</span>
           <span>4-ME Method</span>
           <span>Autorin & Interviewgast</span>
         </div>
         <div class="hero-actions">
-          <a class="btn primary" href="/media/michelle-emminger-pressekit.zip" download>Pressekit herunterladen</a>
-          <a class="btn light" href="#bildmaterial">Bildmaterial ansehen</a>
+          <a class="btn primary" href="#bildmaterial">Pressebilder ansehen</a>
+          <a class="btn light" href="/media/michelle-emminger-pressekit.zip" download>Pressekit herunterladen</a>
         </div>
       </div>
       <div class="image-card"><img src="/media/media-michelle-portrait-hero.webp" alt="Michelle Emminger im Gespräch mit einer Kundin" width="1280" height="853" loading="eager" decoding="async" fetchpriority="high" /></div>
@@ -216,6 +235,34 @@ const extraSchema = [
         <dl>
           {facts.map(([label, value]) => <><dt>{label}</dt><dd>{value}</dd></>)}
         </dl>
+      </div>
+    </div>
+  </section>
+
+  <section id="bildmaterial" class="section media-gallery-section">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow">Pressebilder</p>
+          <h2>Mehr Bildauswahl, schneller verwendbar.</h2>
+        </div>
+        <p>Ausgewählte Motive für Portrait, Training, Methode, Buch- und Interviewkontext. Für redaktionelle Nutzung bitte den Bildcredit <strong>Michelle Emminger</strong> nennen.</p>
+      </div>
+      <div class="usage-note">
+        <strong>Nutzungshinweis:</strong> Frei für redaktionelle Berichterstattung, Interview-Ankündigungen und Kooperationskommunikation mit Credit. Bezahlte Werbung, starke Bearbeitung oder Sonderformate bitte vorab freigeben lassen.
+      </div>
+      <div class="media-photo-grid">
+        {photos.map((photo) => (
+          <a class="media-photo" href={photo.href} download>
+            <img src={photo.src} alt={photo.alt} width={photo.width} height={photo.height} loading="eager" decoding="async" />
+            <div>
+              <h3>{photo.title}</h3>
+              <p>{photo.copy}</p>
+              <small>Bildcredit: Michelle Emminger</small>
+              <span>Bild herunterladen</span>
+            </div>
+          </a>
+        ))}
       </div>
     </div>
   </section>
@@ -244,42 +291,15 @@ const extraSchema = [
   <section id="downloads" class="section alt downloads-section">
     <div class="container">
       <p class="eyebrow">Downloads</p>
-      <h2>Pressekit, Presseinfo, Kurzprofil und Logos.</h2>
+      <h2>Pressekit, Presseinfo und Kurzprofil.</h2>
+      <p class="download-intro">Logos sind optional im Pressekit enthalten — der Fokus liegt hier bewusst auf direkt nutzbaren Bildern und redaktionellen Informationen.</p>
       <div class="download-grid">
         {downloads.map((item) => (
-          <a class:list={["download-card", item.featured && "featured"]} href={item.href} download>
+          <a class:list={["download-card", item.featured && "featured", item.compact && "compact"]} href={item.href} download>
             <span>{item.meta}</span>
             <h3>{item.title}</h3>
             <p>{item.copy}</p>
             <strong>Download</strong>
-          </a>
-        ))}
-      </div>
-    </div>
-  </section>
-
-  <section id="bildmaterial" class="section media-gallery-section">
-    <div class="container">
-      <div class="section-head">
-        <div>
-          <p class="eyebrow">Bildmaterial</p>
-          <h2>Aktuelle Motive für Redaktion, Bühne und Kooperation.</h2>
-        </div>
-        <p>Die Bilder zeigen Michelle im Coaching- und Trainingskontext. Für redaktionelle Nutzung bitte den Bildcredit <strong>Michelle Emminger</strong> nennen.</p>
-      </div>
-      <div class="usage-note">
-        <strong>Nutzungshinweis:</strong> Frei für redaktionelle Berichterstattung, Interview-Ankündigungen und Kooperationskommunikation mit Credit. Bezahlte Werbung, starke Bearbeitung oder Sonderformate bitte vorab freigeben lassen.
-      </div>
-      <div class="media-photo-grid">
-        {photos.map((photo) => (
-          <a class="media-photo" href={photo.href} download>
-            <img src={photo.src} alt={photo.alt} width={photo.width} height={photo.height} loading="eager" decoding="async" />
-            <div>
-              <h3>{photo.title}</h3>
-              <p>{photo.copy}</p>
-              <small>Bildcredit: Michelle Emminger</small>
-              <span>Original-WebP herunterladen</span>
-            </div>
           </a>
         ))}
       </div>
@@ -348,6 +368,16 @@ const extraSchema = [
   </section>
 
   <FAQ items={faq} heading="Antworten auf häufige Medienfragen" />
+
+  <style>
+    .media-gallery-section{background:#fff}
+    .media-gallery-section .media-photo-grid{grid-template-columns:repeat(4,minmax(0,1fr))}
+    .media-gallery-section .media-photo img{aspect-ratio:4/3}
+    .downloads-section .download-intro{max-width:64ch;margin:-.4rem 0 1.2rem}
+    .download-card.compact{background:#fff;box-shadow:none;border-style:dashed}
+    @media(max-width:960px){.media-gallery-section .media-photo-grid{grid-template-columns:1fr 1fr}}
+    @media(max-width:640px){.media-gallery-section .media-photo-grid{grid-template-columns:1fr}}
+  </style>
 
   <script>
     document.querySelectorAll('[data-copy]').forEach((button) => {
