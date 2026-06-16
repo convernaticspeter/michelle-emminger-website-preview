@@ -7,41 +7,29 @@ const mediaMailto = `mailto:${mediaEmail}?subject=Medienanfrage%20Michelle%20Emm
 const downloads = [
   {
     title: 'Pressekit',
-    copy: 'Basispresseinformation, Hintergrundinfo und Pressebilder in einem ZIP-Paket.',
+    copy: 'DOCX-Informationen und hochqualitative JPEG-Pressebilder in einem ZIP-Paket.',
     href: '/media/michelle-emminger-pressekit.zip',
     meta: 'ZIP · Pressekit',
     featured: true
   },
   {
     title: 'Basispresseinformation',
-    copy: 'Direktlink zur Basispresseinformation über Michelle Emminger und die 4-ME Method.',
-    href: '/media/basispresseinformation-michelle-emminger-4-me-method.pdf',
-    meta: 'PDF · Presseinfo'
-  },
-  {
-    title: 'Basispresseinformation',
     copy: 'Word-Datei für redaktionelle Weiterverarbeitung.',
     href: '/media/basispresseinformation-michelle-emminger-4-me-method.docx',
-    meta: 'Word · DOCX'
-  },
-  {
-    title: 'Hintergrundinfo: „From Struggle to Strength“ – eine Story, die Mut macht und motiviert',
-    copy: 'Direktlink zur Hintergrundinformation über Michelles persönliche Geschichte.',
-    href: '/media/hintergrundinfo-michelle-emminger-from-struggle-to-strength.pdf',
-    meta: 'PDF · Hintergrundinfo'
+    meta: 'DOCX · Presseinfo'
   },
   {
     title: 'Hintergrundinfo: „From Struggle to Strength“ – eine Story, die Mut macht und motiviert',
     copy: 'Word-Datei für redaktionelle Weiterverarbeitung.',
     href: '/media/hintergrundinfo-michelle-emminger-from-struggle-to-strength.docx',
-    meta: 'Word · DOCX'
+    meta: 'DOCX · Hintergrundinfo'
   }
 ];
 
 const photos = [
   {
     src: '/media/media-michelle-portrait-card.webp',
-    href: '/media/media-michelle-portrait.webp',
+    href: '/media/pressebild-michelle-emminger-portrait-copyright-frank-schmidhofer.jpg',
     alt: 'Michelle Emminger im Coaching-Gespräch',
     title: 'Michelle Emminger Portrait',
     width: 760,
@@ -49,7 +37,7 @@ const photos = [
   },
   {
     src: '/media/media-michelle-training-card.webp',
-    href: '/media/media-michelle-training.webp',
+    href: '/media/pressebild-michelle-emminger-training-copyright-frank-schmidhofer.jpg',
     alt: 'Michelle Emminger begleitet eine Kundin beim Training',
     title: 'Michelle Emminger Training',
     width: 760,
@@ -57,7 +45,7 @@ const photos = [
   },
   {
     src: '/media/media-michelle-coaching-card.webp',
-    href: '/media/media-michelle-coaching.webp',
+    href: '/media/pressebild-michelle-emminger-coaching-copyright-frank-schmidhofer.jpg',
     alt: 'Michelle Emminger korrigiert eine Übung',
     title: 'Michelle Emminger Coaching',
     width: 760,
@@ -65,7 +53,7 @@ const photos = [
   },
   {
     src: '/media/media-michelle-strength-card.webp',
-    href: '/media/media-michelle-strength.webp',
+    href: '/media/pressebild-michelle-emminger-krafttraining-copyright-frank-schmidhofer.jpg',
     alt: 'Michelle Emminger zeigt Krafttraining',
     title: 'Michelle Emminger Krafttraining',
     width: 760,
@@ -73,7 +61,7 @@ const photos = [
   },
   {
     src: '/assets/hero-training.webp',
-    href: '/assets/hero-training.webp',
+    href: '/media/pressebild-michelle-emminger-personal-training-copyright-frank-schmidhofer.jpg',
     alt: 'Michelle Emminger beim Training',
     title: 'Michelle Emminger Personal Training',
     width: 1200,
@@ -81,7 +69,7 @@ const photos = [
   },
   {
     src: '/assets/personal-training.webp',
-    href: '/assets/personal-training.webp',
+    href: '/media/pressebild-michelle-emminger-1zu1-training-copyright-frank-schmidhofer.jpg',
     alt: 'Michelle Emminger im Personal Training',
     title: 'Michelle Emminger 1:1 Training',
     width: 1200,
@@ -162,7 +150,7 @@ const extraSchema = [
             <img src={photo.src} alt={photo.alt} width={photo.width} height={photo.height} loading="eager" decoding="async" />
             <div>
               <h3>{photo.title}</h3>
-              <span>Bild herunterladen</span>
+              <span>JPEG herunterladen</span>
             </div>
           </a>
         ))}
@@ -174,7 +162,7 @@ const extraSchema = [
     <div class="container">
       <p class="eyebrow">Downloads</p>
       <h2>Direktlinks für Redaktionen.</h2>
-      <p class="download-intro">Basispresseinformation und Hintergrundinfo stehen jeweils als PDF und Word-Datei bereit.</p>
+      <p class="download-intro">Basispresseinformation und Hintergrundinfo stehen als DOCX-Dateien bereit.</p>
       <div class="download-grid">
         {downloads.map((item) => (
           <a class:list={["download-card", item.featured && "featured"]} href={item.href} download>
