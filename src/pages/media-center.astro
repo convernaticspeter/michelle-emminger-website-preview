@@ -139,7 +139,6 @@ const extraSchema = [
           <p class="eyebrow">Pressebilder</p>
           <h2>Pressebilder</h2>
         </div>
-        <p class="photo-credit">Copyright: Frank Schmidhofer</p>
       </div>
       <div class="usage-note">
         <strong>Nutzungshinweis:</strong> Bilder für redaktionelle Berichterstattung frei verwendbar.
@@ -150,6 +149,7 @@ const extraSchema = [
             <img src={photo.src} alt={photo.alt} width={photo.width} height={photo.height} loading="eager" decoding="async" />
             <div>
               <h3>{photo.title}</h3>
+              <small>Copyright: Frank Schmidhofer</small>
               <span>JPEG herunterladen</span>
             </div>
           </a>
@@ -201,7 +201,6 @@ const extraSchema = [
     .media-gallery-section{background:#fff}
     .media-gallery-section .media-photo-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
     .media-gallery-section .media-photo img{height:auto;object-fit:contain}
-    .photo-credit{justify-self:end;align-self:center;margin:0;padding:.72rem .95rem;border:1px solid var(--line);border-radius:999px;background:var(--soft);color:var(--ink);font-weight:900}
     .media-hero .image-card img{height:auto;min-height:0;aspect-ratio:auto;object-fit:contain}
     .downloads-section .download-intro{max-width:64ch;margin:-.4rem 0 1.2rem}
     .media-contact-card{display:grid;gap:1.05rem}
@@ -209,7 +208,7 @@ const extraSchema = [
     .media-contact-person img{width:96px;height:96px;border-radius:999px;object-fit:cover;box-shadow:0 14px 34px rgba(48,50,57,.16)}
     .media-contact-person h3{margin-bottom:.25rem}
     .media-contact-person p{margin:0}
-    @media(max-width:960px){.media-gallery-section .media-photo-grid{grid-template-columns:1fr 1fr}.photo-credit{justify-self:start}}
+    @media(max-width:960px){.media-gallery-section .media-photo-grid{grid-template-columns:1fr 1fr}}
     @media(max-width:640px){.media-gallery-section .media-photo-grid{grid-template-columns:1fr}.media-contact-person{grid-template-columns:76px 1fr}.media-contact-person img{width:76px;height:76px}}
   </style>
 </BaseLayout>
