@@ -204,9 +204,14 @@ const extraSchema = [
         <h2>Ihr Kontakt für Medien-Anfragen</h2>
         <p>Für Interviews, redaktionelle Beiträge, Presseinformationen und Kooperationsanfragen steht gerne zur Verfügung:</p>
       </div>
-      <div class="contact-card">
-        <h3>Dr. Martina Zowack</h3>
-        <p>Zowack PR & Communications</p>
+      <div class="contact-card media-contact-card">
+        <div class="media-contact-person">
+          <img src="/media/dr-martina-zowack.webp" alt="Dr. Martina Zowack, Zowack PR & Communications" width="900" height="900" loading="lazy" decoding="async" />
+          <div>
+            <h3>Dr. Martina Zowack</h3>
+            <p>Zowack PR & Communications</p>
+          </div>
+        </div>
         <p><a href="tel:+436763047112">+43 676 3047112</a><br /><a href={`mailto:${mediaEmail}`}>{mediaEmail}</a></p>
         <a class="btn primary" href={mediaMailto}>Medienanfrage senden</a>
       </div>
@@ -219,7 +224,12 @@ const extraSchema = [
     .media-gallery-section .media-photo img{height:auto;object-fit:contain}
     .media-hero .image-card img{height:auto;min-height:0;aspect-ratio:auto;object-fit:contain}
     .downloads-section .download-intro{max-width:64ch;margin:-.4rem 0 1.2rem}
+    .media-contact-card{display:grid;gap:1.05rem}
+    .media-contact-person{display:grid;grid-template-columns:96px 1fr;gap:1rem;align-items:center}
+    .media-contact-person img{width:96px;height:96px;border-radius:999px;object-fit:cover;box-shadow:0 14px 34px rgba(48,50,57,.16)}
+    .media-contact-person h3{margin-bottom:.25rem}
+    .media-contact-person p{margin:0}
     @media(max-width:960px){.media-gallery-section .media-photo-grid{grid-template-columns:1fr 1fr}}
-    @media(max-width:640px){.media-gallery-section .media-photo-grid{grid-template-columns:1fr}}
+    @media(max-width:640px){.media-gallery-section .media-photo-grid{grid-template-columns:1fr}.media-contact-person{grid-template-columns:76px 1fr}.media-contact-person img{width:76px;height:76px}}
   </style>
 </BaseLayout>
