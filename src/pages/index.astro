@@ -2,11 +2,47 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import FAQ from '../components/FAQ.astro';
 import Inquiry from '../components/Inquiry.astro';
+import Icon from '../components/Icon.astro';
+
 const faq = [
   { q: 'Was macht Michelle Emminger?', a: 'Michelle Emminger ist Personal-, Gesundheits- und Functional Trainerin in Wien. Sie bietet 1:1 Personal Training, Online Coaching und Firmenfitness an und arbeitet mit ihrer 4-ME Method: My Body, My Mind, My Life und My Success.' },
   { q: 'Für wen ist Michelle die richtige Trainerin?', a: 'Michelle passt besonders für Menschen 40+, die wieder Kraft, Energie, Haltung und Vertrauen in den eigenen Körper aufbauen wollen. Ihre Arbeit ist persönlich, klar und verbindlich — ohne Gym-Inszenierung, aber mit echter Begleitung.' },
   { q: 'Was bedeutet From Struggle to Strength?', a: 'From Struggle to Strength beschreibt Michelles eigenen Weg mit körperlichen Rückschlägen, Selbstzweifeln und dem Aufbau zurück zu mehr Kraft. Diese Erfahrung prägt ihre Arbeit: fachlich klar, persönlich und auf Augenhöhe.' },
   { q: 'Was ist die 4-ME Method?', a: 'Die 4-ME Method ist Michelles Trainingsansatz. Er verbindet Körper, mentale Stärke, Alltag und Fortschritt. Dadurch wird Training nicht als isolierter Plan verstanden, sondern als System, das in ein echtes Leben passen muss.' }
+];
+
+const pillars = [
+  { icon: 'body', label: 'My Body', copy: 'Kraft, Haltung, Technik' },
+  { icon: 'mind', label: 'My Mind', copy: 'Sicherheit und Dranbleiben' },
+  { icon: 'life', label: 'My Life', copy: 'Routinen im Alltag' },
+  { icon: 'success', label: 'My Success', copy: 'Fortschritt sichtbar machen' }
+];
+
+const offers = [
+  {
+    icon: 'personal',
+    label: '01',
+    title: 'Personal Training Wien',
+    copy: '1:1 Betreuung für Kraft, Haltung, Technik, Rücken, Muskelaufbau und Wiedereinstieg. Persönlich, präzise und auf deinen Alltag abgestimmt.',
+    href: '/personal-training-wien/',
+    cta: 'Personal Training ansehen'
+  },
+  {
+    icon: 'online',
+    label: '02',
+    title: 'Online & Hybrid Coaching',
+    copy: 'Plan, Rückmeldung und klare Trainingsplanung, wenn du flexibel bleiben musst oder zwischen Einheiten Orientierung brauchst.',
+    href: '/online-coaching/',
+    cta: 'Online Coaching ansehen'
+  },
+  {
+    icon: 'office',
+    label: '03',
+    title: 'Firmenfitness Wien',
+    copy: 'Office Fitness für Teams: kurze Einheiten gegen Sitz-Alltag, Nacken- und Rückenthemen, Energietiefs und Bewegungsmangel im Büro.',
+    href: '/firmenfitness/',
+    cta: 'B2B-Pilot ansehen'
+  }
 ];
 ---
 <BaseLayout title="Michelle Emminger | Personal Training Wien & Firmenfitness" description="Personal Training in Wien, Online Coaching und Firmenfitness nach der 4-ME Method: Michelle Emminger begleitet Menschen zurück zu mehr Kraft, Sicherheit und Vertrauen in den Körper." canonical="/" faq={faq}>
@@ -23,8 +59,8 @@ const faq = [
   </div>
 </section>
 <section class="section"><div class="container narrow"><p class="eyebrow">Ansatz</p><h2>Training wird erst nachhaltig, wenn sich der Mensch dahinter verstanden fühlt.</h2><p class="answer-block">Michelle Emminger steht für Personal Training in Wien, das aus eigener Erfahrung entstanden ist: aus körperlichen Rückschlägen, Unsicherheit und dem langen Weg zurück zu mehr Kraft, Routine und Selbstvertrauen. Ihre 4-ME Method verbindet Training, Vertrauen, Alltag und Fortschritt zu einem klaren, persönlichen Weg.</p><p>Viele Menschen wissen im Grunde, dass ihnen Training guttun würde. Schwierig wird es dort, wo Job, Energie, Rücken und alte Muster wieder dazwischenkommen. Genau da setzt Michelle an: mit einem Training, das deine Ausgangssituation ernst nimmt und in eine normale Woche passt — nicht nur auf dem Papier.</p></div></section>
-<section class="section alt"><div class="container split"><div><p class="eyebrow">Die 4-ME Method</p><h2>„4-ME METHOD“ – die NUR für MICH Methode.</h2><p>Viele Trainingspläne scheitern, weil sie nur den Körper sehen. Michelle arbeitet anders: Der Körper braucht Reize, der Kopf braucht Sicherheit, der Alltag braucht einfache Routinen und Erfolg muss so definiert werden, dass er motiviert statt Druck macht.</p><div class="anchor-list"><a href="/4-me-method/">Methode im Detail</a><a href="/personal-training-wien/">Personal Training</a><a href="/firmenfitness/">Firmenfitness</a></div></div><div class="method-strip"><div><strong>My Body</strong><span class="mini-kicker">Kraft, Haltung, Technik</span></div><div><strong>My Mind</strong><span class="mini-kicker">Sicherheit und Dranbleiben</span></div><div><strong>My Life</strong><span class="mini-kicker">Routinen im Alltag</span></div><div><strong>My Success</strong><span class="mini-kicker">Fortschritt sichtbar machen</span></div></div></div></section>
-<section class="section"><div class="container"><p class="eyebrow">Angebote</p><h2>Nicht jedes Ziel braucht denselben Start.</h2><div class="grid three"><div class="card"><div class="num">1</div><h3>Personal Training Wien</h3><p>1:1 Betreuung für Kraft, Haltung, Technik, Rücken, Muskelaufbau und Wiedereinstieg. Persönlich, präzise und auf deinen Alltag abgestimmt.</p><a class="btn light" href="/personal-training-wien/">Personal Training ansehen</a></div><div class="card"><div class="num">2</div><h3>Online & Hybrid Coaching</h3><p>Plan, Rückmeldung und klare Trainingsplanung, wenn du flexibel bleiben musst oder zwischen Einheiten Orientierung brauchst.</p><a class="btn light" href="/online-coaching/">Online Coaching ansehen</a></div><div class="card"><div class="num">3</div><h3>Firmenfitness Wien</h3><p>Office Fitness für Teams: kurze Einheiten gegen Sitz-Alltag, Nacken- und Rückenthemen, Energietiefs und Bewegungsmangel im Büro.</p><a class="btn light" href="/firmenfitness/">B2B-Pilot ansehen</a></div></div></div></section>
+<section class="section alt"><div class="container split"><div><p class="eyebrow">Die 4-ME Method</p><h2>„4-ME METHOD“ – die NUR für MICH Methode.</h2><p>Viele Trainingspläne scheitern, weil sie nur den Körper sehen. Michelle arbeitet anders: Der Körper braucht Reize, der Kopf braucht Sicherheit, der Alltag braucht einfache Routinen und Erfolg muss so definiert werden, dass er motiviert statt Druck macht.</p><div class="anchor-list"><a href="/4-me-method/">Methode im Detail</a><a href="/personal-training-wien/">Personal Training</a><a href="/firmenfitness/">Firmenfitness</a></div></div><div class="method-strip method-strip--graphic">{pillars.map((pillar) => (<div class="method-cell"><span class="icon-badge method-icon"><Icon name={pillar.icon} /></span><strong>{pillar.label}</strong><span class="mini-kicker">{pillar.copy}</span></div>))}</div></div></section>
+<section class="section"><div class="container"><p class="eyebrow">Angebote</p><h2>Nicht jedes Ziel braucht denselben Start.</h2><div class="grid three graphic-grid">{offers.map((offer) => (<div class="card graphic-card"><div class="card-topline"><span class="icon-badge"><Icon name={offer.icon} /></span><span class="card-index">{offer.label}</span></div><h3>{offer.title}</h3><p>{offer.copy}</p><a class="btn light" href={offer.href}>{offer.cta}</a></div>))}</div></div></section>
 <section class="section alt"><div class="container split"><div class="image-card"><img src="/assets/about.webp" alt="Michelle Emminger bespricht Training und Fortschritt mit einer Kundin" loading="lazy"/></div><div><p class="eyebrow">Warum Michelle</p><h2>Michelle hört zu – und sagt dir klar, was jetzt Sinn macht.</h2><p>Michelle kennt Selbstzweifel, körperliche Grenzen und das Gefühl, sich im eigenen Körper fremd zu fühlen. Genau deshalb klingt ihre Arbeit nicht nach Fitness-Floskeln, sondern nach echter Begleitung: zuhören, einordnen, anleiten, korrigieren und weitergehen.</p><ul class="checklist"><li>Mehrfach diplomierte Personal-, Gesundheits- und Functional Trainerin</li><li>Eigene Transformation: Rückenprobleme, Epilepsie, 20 kg Übergewicht</li><li>Technik zuerst: präzise Ausführung vor mehr Gewicht</li><li>Kein Urteil, keine Show, keine Wunder-Versprechen</li></ul><p><a class="btn primary" href="/ueber-mich/">Mehr über Michelle</a></p></div></div></section>
 <section class="section"><div class="container"><div class="band"><p class="eyebrow">From Struggle to Strength</p><div class="quote">„Ich begleite Menschen, die wieder Kraft, Sicherheit und Vertrauen in ihren Körper aufbauen wollen.“</div><p>Das gelingt besser ohne Druck — aber mit einem klaren Plan, guter Technik und jemandem, der Rückschläge nicht nur aus der Theorie kennt.</p><a class="btn mint" href="/4-me-method/">4-ME Method ansehen</a></div></div></section>
 <FAQ items={faq} heading="Häufige Fragen zum Einstieg" />

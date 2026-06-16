@@ -1,0 +1,27 @@
+---
+import body from '../assets/icons/system/dumbbell.svg?raw';
+import mind from '../assets/icons/system/brain-circuit.svg?raw';
+import life from '../assets/icons/system/calendar-check.svg?raw';
+import success from '../assets/icons/system/trophy.svg?raw';
+import personal from '../assets/icons/system/user-round-check.svg?raw';
+import online from '../assets/icons/system/monitor-check.svg?raw';
+import office from '../assets/icons/system/building-2.svg?raw';
+import activity from '../assets/icons/system/activity.svg?raw';
+import repeat from '../assets/icons/system/repeat-2.svg?raw';
+import target from '../assets/icons/system/target.svg?raw';
+import heart from '../assets/icons/system/heart-pulse.svg?raw';
+import route from '../assets/icons/system/route.svg?raw';
+import check from '../assets/icons/system/badge-check.svg?raw';
+
+const icons = { body, mind, life, success, personal, online, office, activity, repeat, target, heart, route, check };
+const { name, label = '', class: className = '' } = Astro.props;
+const svg = icons[name];
+if (!svg) throw new Error(`Unknown icon: ${name}`);
+---
+<span
+  class:list={["svg-icon", className]}
+  aria-hidden={label ? undefined : 'true'}
+  role={label ? 'img' : undefined}
+  aria-label={label || undefined}
+  set:html={svg}
+/>
