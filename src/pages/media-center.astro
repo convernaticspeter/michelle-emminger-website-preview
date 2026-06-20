@@ -6,13 +6,6 @@ const mediaMailto = `mailto:${mediaEmail}?subject=Medienanfrage%20Michelle%20Emm
 
 const downloads = [
   {
-    title: 'Pressekit',
-    copy: 'DOCX-Informationen und hochqualitative JPEG-Pressebilder in einem ZIP-Paket.',
-    href: '/media/michelle-emminger-pressekit.zip',
-    meta: 'ZIP · Pressekit',
-    featured: true
-  },
-  {
     title: 'Basispresseinformation',
     copy: 'Word-Datei für redaktionelle Weiterverarbeitung.',
     href: '/media/basispresseinformation-michelle-emminger-4-me-method.docx',
@@ -23,6 +16,13 @@ const downloads = [
     copy: 'Word-Datei für redaktionelle Weiterverarbeitung.',
     href: '/media/hintergrundinfo-michelle-emminger-from-struggle-to-strength.docx',
     meta: 'DOCX · Hintergrundinfo'
+  },
+  {
+    title: 'Pressekit',
+    copy: 'DOCX-Informationen und hochqualitative JPEG-Pressebilder in einem ZIP-Paket.',
+    href: '/media/michelle-emminger-pressekit.zip',
+    meta: 'ZIP · Pressekit',
+    pressKit: true
   }
 ];
 
@@ -141,7 +141,7 @@ const extraSchema = [
         <p class="lead">Presse- und Hintergrundinformation, Pressebilder, Kurzprofil und Medienkontakt für Beiträge und Interviews.</p>
         <div class="hero-actions">
           <a class="btn primary" href="#bildmaterial">Pressebilder ansehen</a>
-          <a class="btn light" href="#downloads">Direktlinks öffnen</a>
+          <a class="btn light" href="#downloads">Downloads öffnen</a>
         </div>
       </div>
       <div class="image-card"><img src="/media/media-michelle-portrait-hero.webp" alt="Michelle Emminger im Gespräch mit einer Kundin" width="1280" height="853" loading="eager" decoding="async" fetchpriority="high" /></div>
@@ -151,11 +151,11 @@ const extraSchema = [
   <section id="downloads" class="section alt downloads-section">
     <div class="container">
       <p class="eyebrow">Downloads</p>
-      <h2>Direktlinks für Redaktionen.</h2>
+      <h2>Downloads</h2>
       <p class="download-intro">Basispresseinformation und Hintergrundinfo stehen als DOCX-Dateien bereit.</p>
       <div class="download-grid">
         {downloads.map((item) => (
-          <a class:list={["download-card", item.featured && "featured"]} href={item.href} download>
+          <a class:list={["download-card", item.featured && "featured", item.pressKit && "press-kit"]} href={item.href} download>
             <span>{item.meta}</span>
             <h3>{item.title}</h3>
             <p>{item.copy}</p>
@@ -219,6 +219,8 @@ const extraSchema = [
     .media-gallery-section .media-photo img{height:auto;object-fit:contain}
     .media-hero .image-card img{height:auto;min-height:0;aspect-ratio:auto;object-fit:contain}
     .downloads-section .download-intro{max-width:64ch;margin:-.4rem 0 1.2rem}
+    .downloads-section .download-card.press-kit{min-height:210px;align-self:start}
+    @media(min-width:961px){.downloads-section .download-card.press-kit{grid-column:4}}
     .media-contact-card{display:grid;gap:1.05rem}
     .media-contact-person{display:grid;grid-template-columns:96px 1fr;gap:1rem;align-items:center}
     .media-contact-person img{width:96px;height:96px;border-radius:999px;object-fit:cover;box-shadow:0 14px 34px rgba(48,50,57,.16)}
