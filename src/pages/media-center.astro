@@ -140,6 +140,24 @@ const extraSchema = [
     </div>
   </section>
 
+  <section id="downloads" class="section alt downloads-section">
+    <div class="container">
+      <p class="eyebrow">Downloads</p>
+      <h2>Direktlinks für Redaktionen.</h2>
+      <p class="download-intro">Basispresseinformation und Hintergrundinfo stehen als DOCX-Dateien bereit.</p>
+      <div class="download-grid">
+        {downloads.map((item) => (
+          <a class:list={["download-card", item.featured && "featured"]} href={item.href} download>
+            <span>{item.meta}</span>
+            <h3>{item.title}</h3>
+            <p>{item.copy}</p>
+            <strong>Download</strong>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
   <section id="bildmaterial" class="section media-gallery-section">
     <div class="container">
       <div class="section-head">
@@ -160,24 +178,6 @@ const extraSchema = [
               <small>Copyright: Frank Schmidhofer</small>
               <span>JPEG herunterladen</span>
             </div>
-          </a>
-        ))}
-      </div>
-    </div>
-  </section>
-
-  <section id="downloads" class="section alt downloads-section">
-    <div class="container">
-      <p class="eyebrow">Downloads</p>
-      <h2>Direktlinks für Redaktionen.</h2>
-      <p class="download-intro">Basispresseinformation und Hintergrundinfo stehen als DOCX-Dateien bereit.</p>
-      <div class="download-grid">
-        {downloads.map((item) => (
-          <a class:list={["download-card", item.featured && "featured"]} href={item.href} download>
-            <span>{item.meta}</span>
-            <h3>{item.title}</h3>
-            <p>{item.copy}</p>
-            <strong>Download</strong>
           </a>
         ))}
       </div>
