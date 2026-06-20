@@ -156,12 +156,12 @@ const extraSchema = [
       <p class="download-intro">Basispresseinformation und Hintergrundinfo stehen als DOCX-Dateien bereit.</p>
       <div class="download-grid">
         {downloads.map((item) => (
-          <a class:list={["download-card", item.featured && "featured", item.pressKit && "press-kit"]} href={item.href} download>
+          <article class:list={["download-card", item.featured && "featured", item.pressKit && "press-kit"]}>
             <span>{item.meta}</span>
             <h3>{item.title}</h3>
             <p>{item.copy}</p>
-            <strong>Download</strong>
-          </a>
+            <a class="btn light" href={item.href} download>Download</a>
+          </article>
         ))}
       </div>
     </div>
@@ -221,6 +221,8 @@ const extraSchema = [
     .media-hero .image-card img{height:auto;min-height:0;aspect-ratio:auto;object-fit:contain}
     .downloads-section .download-intro{max-width:64ch;margin:-.4rem 0 1.2rem}
     .downloads-section .download-grid{align-items:start}
+    .downloads-section .download-card:hover{transform:none}
+    .downloads-section .download-card .btn{align-self:flex-start;margin-top:auto}
     .downloads-section .download-card:not(.press-kit){min-height:310px}
     .downloads-section .download-card.press-kit{min-height:220px;align-self:start}
     @media(min-width:961px){.downloads-section .download-grid{grid-template-columns:minmax(0,1.15fr) minmax(0,1.15fr) minmax(230px,.72fr)}.downloads-section .download-card.press-kit.featured{grid-column:auto}}
