@@ -6,12 +6,16 @@ const { items = [], heading = 'Häufige Fragen' } = Astro.props;
     <p class="eyebrow">Häufige Fragen</p>
     <h2>{heading}</h2>
     <div class="faq-list">
-      {items.map((item) => (
-        <details class="faq-item">
-          <summary>{item.q}</summary>
-          <p>{item.a}</p>
-        </details>
-      ))}
+      {items.map((item) => {
+        const qParts = item.linkPhrase && item.linkHref ? item.q.split(item.linkPhrase) : [item.q];
+        const aParts = item.linkPhrase && item.linkHref ? item.a.split(item.linkPhrase) : [item.a];
+        return (
+          <details class="faq-item">
+            <summary>{qParts.map((part, index) => (<>{part}{index < qParts.length - 1 && <a class="story-anchor-link" href={item.linkHref}>{item.linkPhrase}</a>}</>))}</summary>
+            <p>{aParts.map((part, index) => (<>{part}{index < aParts.length - 1 && <a class="story-anchor-link" href={item.linkHref}>{item.linkPhrase}</a>}</>))}</p>
+          </details>
+        );
+      })}
     </div>
   </div>
 </section>

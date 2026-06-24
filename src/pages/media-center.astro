@@ -3,6 +3,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
 const mediaEmail = 'martina.zowack@zowack.com';
 const mediaMailto = `mailto:${mediaEmail}?subject=Medienanfrage%20Michelle%20Emminger`;
+const storyAnchorHref = '/ueber-mich/#from-struggle-to-strength';
 
 const downloads = [
   {
@@ -14,6 +15,10 @@ const downloads = [
   },
   {
     title: 'Hintergrundinfo: „From Struggle to Strength“ – eine Story, die Mut macht und motiviert',
+    titleBefore: 'Hintergrundinfo: „',
+    titleLinkText: 'From Struggle to Strength',
+    titleAfter: '“ – eine Story, die Mut macht und motiviert',
+    titleLinkHref: storyAnchorHref,
     copy: 'Word-Datei für redaktionelle Weiterverarbeitung.',
     href: '/media/hintergrundinfo-michelle-emminger-from-struggle-to-strength.docx',
     meta: 'DOCX · Hintergrundinfo'
@@ -41,6 +46,9 @@ const pressReleases = [
   {
     tag: 'Hintergrundmeldung',
     title: 'From Struggle to Strength: die persönliche Geschichte hinter Michelles Arbeit',
+    titleLinkText: 'From Struggle to Strength',
+    titleAfter: ': die persönliche Geschichte hinter Michelles Arbeit',
+    titleLinkHref: storyAnchorHref,
     copy: 'Vom eigenen Weg zurück zu Kraft, Routine und Selbstvertrauen zur Arbeit mit Menschen, die wieder Vertrauen in ihren Körper aufbauen wollen.',
     href: '/media/hintergrundinfo-michelle-emminger-from-struggle-to-strength.docx',
     cta: 'Hintergrundinfo als DOCX',
@@ -185,12 +193,21 @@ const extraSchema = [
       <p class="download-intro">Basispresseinformation und Hintergrundinfo stehen als DOCX-Dateien bereit.</p>
       <div class="download-grid">
         {downloads.map((item) => (
-          <a class:list={["download-card", item.featured && "featured", item.pressKit && "press-kit"]} href={item.href} download>
-            <span>{item.meta}</span>
-            {item.headingLevel === 'h2' ? <h2>{item.title}</h2> : <h3>{item.title}</h3>}
-            <p>{item.copy}</p>
-            <strong>Download</strong>
-          </a>
+          item.titleLinkHref ? (
+            <article class:list={["download-card", item.featured && "featured", item.pressKit && "press-kit", "download-card-static"]}>
+              <span>{item.meta}</span>
+              <h3>{item.titleBefore}<a class="story-anchor-link" href={item.titleLinkHref}>{item.titleLinkText}</a>{item.titleAfter}</h3>
+              <p>{item.copy}</p>
+              <a class="download-action" href={item.href} download>Download</a>
+            </article>
+          ) : (
+            <a class:list={["download-card", item.featured && "featured", item.pressKit && "press-kit"]} href={item.href} download>
+              <span>{item.meta}</span>
+              {item.headingLevel === 'h2' ? <h2>{item.title}</h2> : <h3>{item.title}</h3>}
+              <p>{item.copy}</p>
+              <strong>Download</strong>
+            </a>
+          )
         ))}
       </div>
     </div>
@@ -233,12 +250,21 @@ const extraSchema = [
       </div>
       <div class="press-release-grid">
         {pressReleases.map((item) => (
-          <a class:list={["press-release-card", item.featured && "featured"]} href={item.href} download={item.download ? true : undefined}>
-            <span>{item.tag}</span>
-            <h3>{item.title}</h3>
-            <p>{item.copy}</p>
-            <strong>{item.cta}</strong>
-          </a>
+          item.titleLinkHref ? (
+            <article class:list={["press-release-card", item.featured && "featured", "press-release-card-static"]}>
+              <span>{item.tag}</span>
+              <h3><a class="story-anchor-link" href={item.titleLinkHref}>{item.titleLinkText}</a>{item.titleAfter}</h3>
+              <p>{item.copy}</p>
+              <a class="press-release-action" href={item.href} download={item.download ? true : undefined}>{item.cta}</a>
+            </article>
+          ) : (
+            <a class:list={["press-release-card", item.featured && "featured"]} href={item.href} download={item.download ? true : undefined}>
+              <span>{item.tag}</span>
+              <h3>{item.title}</h3>
+              <p>{item.copy}</p>
+              <strong>{item.cta}</strong>
+            </a>
+          )
         ))}
       </div>
     </div>
@@ -273,6 +299,9 @@ const extraSchema = [
     .downloads-section .download-intro{max-width:64ch;margin:-.4rem 0 1.2rem}
     .downloads-section .download-grid{align-items:start}
     .downloads-section .download-card h2{font-size:clamp(1.22rem,2vw,1.65rem);letter-spacing:-.025em;margin-top:.65rem;overflow-wrap:anywhere;hyphens:auto}
+    .downloads-section .download-card h3{overflow-wrap:anywhere;hyphens:auto}
+    .download-action,.press-release-action{position:relative;z-index:1;margin-top:auto;color:var(--ink);font-weight:950;text-decoration:none}
+    .download-action:hover,.press-release-action:hover{color:var(--blue-2)}
     .downloads-section .download-card:not(.press-kit){min-height:310px}
     .downloads-section .download-card.press-kit{min-height:220px;align-self:start}
     @media(min-width:961px){.downloads-section .download-grid{grid-template-columns:minmax(0,1.15fr) minmax(0,1.15fr) minmax(230px,.72fr)}.downloads-section .download-card.press-kit.featured{grid-column:auto}}
