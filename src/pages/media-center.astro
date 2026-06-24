@@ -28,6 +28,33 @@ const downloads = [
   }
 ];
 
+const pressReleases = [
+  {
+    tag: 'Pressemitteilung',
+    title: 'Michelle Emminger macht die 4-ME Method sichtbar',
+    copy: 'Die Methode verbindet Körper, Mindset, Alltag und messbaren Fortschritt – für Personal Training, Online Coaching und Firmenfitness.',
+    href: '/media/basispresseinformation-michelle-emminger-4-me-method.docx',
+    cta: 'Basisinformation als DOCX',
+    download: true,
+    featured: true
+  },
+  {
+    tag: 'Hintergrundmeldung',
+    title: 'From Struggle to Strength: die persönliche Geschichte hinter Michelles Arbeit',
+    copy: 'Vom eigenen Weg zurück zu Kraft, Routine und Selbstvertrauen zur Arbeit mit Menschen, die wieder Vertrauen in ihren Körper aufbauen wollen.',
+    href: '/media/hintergrundinfo-michelle-emminger-from-struggle-to-strength.docx',
+    cta: 'Hintergrundinfo als DOCX',
+    download: true
+  },
+  {
+    tag: 'Für Redaktionen',
+    title: 'Aktuelle Pressemitteilungen und Interviewanfragen',
+    copy: 'Für O-Töne, Interviews oder eine individuelle redaktionelle Einordnung steht Dr. Martina Zowack als Medienkontakt bereit.',
+    href: mediaMailto,
+    cta: 'Medienanfrage senden'
+  }
+];
+
 const photos = [
   {
     src: '/media/media-michelle-portrait-card.webp',
@@ -123,7 +150,7 @@ const extraSchema = [
 ---
 <BaseLayout
   title="Pressebilder Michelle Emminger | Presseinfo & Medienkontakt"
-  description="Pressebereich von Michelle Emminger: Presse- und Hintergrundinformation, Pressebilder und Medienkontakt für Beiträge und Interviews."
+  description="Pressebereich von Michelle Emminger: Pressemitteilungen, Presse- und Hintergrundinformation, Pressebilder und Medienkontakt für Beiträge und Interviews."
   canonical="/media-center/"
   image="/media/media-michelle-portrait-hero.webp"
   pageType="CollectionPage"
@@ -138,10 +165,11 @@ const extraSchema = [
     <div class="container split">
       <div>
         <p class="breadcrumbs"><a href="/">Start</a> / Media Center</p>
-        <p class="eyebrow">Presseinformation · Pressebilder · Medienkontakt</p>
+        <p class="eyebrow">Pressemitteilungen · Pressebilder · Medienkontakt</p>
         <h1 class="page-title">Pressebereich Michelle Emminger</h1>
-        <p class="lead">Presse- und Hintergrundinformation, Pressebilder, Kurzprofil und Medienkontakt für Beiträge und Interviews.</p>
+        <p class="lead">Pressemitteilungen, Presse- und Hintergrundinformation, Pressebilder, Kurzprofil und Medienkontakt für Beiträge und Interviews.</p>
         <div class="hero-actions">
+          <a class="btn primary" href="#pressemitteilungen">Pressemitteilungen</a>
           <a class="btn primary" href="#bildmaterial">Pressebilder ansehen</a>
           <a class="btn light" href="#downloads">Downloads öffnen</a>
         </div>
@@ -162,6 +190,28 @@ const extraSchema = [
             {item.headingLevel === 'h2' ? <h2>{item.title}</h2> : <h3>{item.title}</h3>}
             <p>{item.copy}</p>
             <strong>Download</strong>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section id="pressemitteilungen" class="section press-release-section">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow">Pressemitteilungen</p>
+          <h2>Aktuelle Meldungen für Redaktionen.</h2>
+        </div>
+        <p>Hier finden Medien die wichtigsten Meldungen und Themenzugänge rund um Michelle Emminger, ihre 4-ME Method und ihre Arbeit mit Personal Training, Online Coaching und Firmenfitness.</p>
+      </div>
+      <div class="press-release-grid">
+        {pressReleases.map((item) => (
+          <a class:list={["press-release-card", item.featured && "featured"]} href={item.href} download={item.download ? true : undefined}>
+            <span>{item.tag}</span>
+            <h3>{item.title}</h3>
+            <p>{item.copy}</p>
+            <strong>{item.cta}</strong>
           </a>
         ))}
       </div>
@@ -226,12 +276,27 @@ const extraSchema = [
     .downloads-section .download-card:not(.press-kit){min-height:310px}
     .downloads-section .download-card.press-kit{min-height:220px;align-self:start}
     @media(min-width:961px){.downloads-section .download-grid{grid-template-columns:minmax(0,1.15fr) minmax(0,1.15fr) minmax(230px,.72fr)}.downloads-section .download-card.press-kit.featured{grid-column:auto}}
+    .press-release-section{background:linear-gradient(180deg,var(--soft) 0%,#fff 100%);scroll-margin-top:110px}
+    #downloads,#bildmaterial,#medienkontakt{scroll-margin-top:110px}
+    .press-release-grid{display:grid;grid-template-columns:minmax(0,1.2fr) repeat(2,minmax(0,.9fr));gap:1rem;margin-top:1.4rem}
+    .press-release-card{position:relative;overflow:hidden;display:flex;flex-direction:column;min-height:300px;text-decoration:none;background:#fff;border:1px solid var(--line);border-radius:30px;padding:1.45rem;box-shadow:0 18px 50px rgba(48,50,57,.08);transition:.18s ease}
+    .press-release-card:after{content:"";position:absolute;inset:auto -24% -34% 42%;height:58%;background:radial-gradient(circle,rgba(56,191,246,.14),transparent 68%);pointer-events:none}
+    .press-release-card:hover{transform:translateY(-2px);box-shadow:0 24px 62px rgba(48,50,57,.13)}
+    .press-release-card span{font-size:.76rem;letter-spacing:.12em;text-transform:uppercase;font-weight:950;color:var(--blue-2);margin-bottom:.8rem}
+    .press-release-card h3{font-size:clamp(1.3rem,2.2vw,2rem);margin-bottom:.85rem}
+    .press-release-card p{position:relative;z-index:1;color:#53616a}
+    .press-release-card strong{position:relative;z-index:1;margin-top:auto;color:var(--ink);font-weight:950}
+    .press-release-card.featured{background:var(--ink);color:white;border-color:rgba(48,50,57,.28);box-shadow:0 28px 72px rgba(32,37,43,.24)}
+    .press-release-card.featured:after{background:radial-gradient(circle,rgba(56,191,246,.22),transparent 68%)}
+    .press-release-card.featured span{color:#8be1ff}
+    .press-release-card.featured h3,.press-release-card.featured strong{color:#fff}
+    .press-release-card.featured p{color:rgba(255,255,255,.82)}
     .media-contact-card{display:grid;gap:1.05rem}
     .media-contact-person{display:grid;grid-template-columns:96px 1fr;gap:1rem;align-items:center}
     .media-contact-person img{width:96px;height:96px;border-radius:999px;object-fit:cover;box-shadow:0 14px 34px rgba(48,50,57,.16)}
     .media-contact-person h3{margin-bottom:.25rem}
     .media-contact-person p{margin:0}
-    @media(max-width:960px){.media-gallery-section .media-photo-grid{grid-template-columns:1fr 1fr}}
+    @media(max-width:960px){.press-release-grid{grid-template-columns:1fr}.press-release-card{min-height:auto}.media-gallery-section .media-photo-grid{grid-template-columns:1fr 1fr}}
     @media(max-width:640px){.media-gallery-section .media-photo-grid{grid-template-columns:1fr}.media-contact-person{grid-template-columns:76px 1fr}.media-contact-person img{width:76px;height:76px}}
   </style>
 </BaseLayout>
