@@ -196,28 +196,6 @@ const extraSchema = [
     </div>
   </section>
 
-  <section id="pressemitteilungen" class="section press-release-section">
-    <div class="container">
-      <div class="section-head">
-        <div>
-          <p class="eyebrow">Pressemitteilungen</p>
-          <h2>Aktuelle Meldungen für Redaktionen.</h2>
-        </div>
-        <p>Hier finden Medien die wichtigsten Meldungen und Themenzugänge rund um Michelle Emminger, ihre 4-ME Method und ihre Arbeit mit Personal Training, Online Coaching und Firmenfitness.</p>
-      </div>
-      <div class="press-release-grid">
-        {pressReleases.map((item) => (
-          <a class:list={["press-release-card", item.featured && "featured"]} href={item.href} download={item.download ? true : undefined}>
-            <span>{item.tag}</span>
-            <h3>{item.title}</h3>
-            <p>{item.copy}</p>
-            <strong>{item.cta}</strong>
-          </a>
-        ))}
-      </div>
-    </div>
-  </section>
-
   <section id="bildmaterial" class="section media-gallery-section">
     <div class="container">
       <div class="section-head">
@@ -238,6 +216,28 @@ const extraSchema = [
               <small>Copyright: Frank Schmidhofer</small>
               <span>JPEG herunterladen</span>
             </div>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section id="pressemitteilungen" class="section press-release-section">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow">Pressemitteilungen</p>
+          <h2>Aktuelle Meldungen für Redaktionen.</h2>
+        </div>
+        <p>Hier finden Medien die wichtigsten Meldungen und Themenzugänge rund um Michelle Emminger, ihre 4-ME Method und ihre Arbeit mit Personal Training, Online Coaching und Firmenfitness.</p>
+      </div>
+      <div class="press-release-grid">
+        {pressReleases.map((item) => (
+          <a class:list={["press-release-card", item.featured && "featured"]} href={item.href} download={item.download ? true : undefined}>
+            <span>{item.tag}</span>
+            <h3>{item.title}</h3>
+            <p>{item.copy}</p>
+            <strong>{item.cta}</strong>
           </a>
         ))}
       </div>
